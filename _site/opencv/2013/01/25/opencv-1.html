@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Introduction to OpenCV & its Installation in Ubuntu 12.04 - DCPrime's Blog </title>
+  <meta name="viewport" content="width=device-width">
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Cantarell' rel='stylesheet' type='text/css'>
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css" media="screen">
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-47877573-1']);
+          _gaq.push(['_trackPageview']);
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+</head>
+<body>
+      <div class="site">
+        <div class="headbar">
+          <h1><div class="dark">DCPrime's</div><div class="light">Blog</div></h1>
+          <div class="navbar">
+            <a href="/">Blog</a>
+            <a class="extra" href="/about.html">About</a>
+            <!--<a class="extra" href="/draft.html">Drafts</a>
+            <a class="extra" href="/review.html">Reviews</a>	-->
+            <br />
+          </div>
+        </div>
+        <!--    <div class="header">
+        <h1 class="tfitle"><a href="/">DCPrime's Blog</a></h1>
+        <a class="extra" href="/">Home</a>
+        </div>-->
+
+        <h2>Introduction to OpenCV & its Installation in Ubuntu 12.04</h2>
+<div class="meta">
+Published on 25 Jan 2013
+</div><br>
+<div class="post">
+<p>Computer vision is a rapidly growing field, partly as a result of both cheaper and more capable cameras, partly because of affordable processing power, and partly because vision algorithms are starting to mature. <a class="zem_slink" title="OpenCV" href="http://opencv.willowgarage.com/wiki/" target="_blank" rel="homepage">OpenCV</a> itself has played a role in the growth of <a class="zem_slink" title="Computer vision" href="http://en.wikipedia.org/wiki/Computer_vision" target="_blank" rel="wikipedia">computer vision</a> by enabling thousands of people to do more productive work in vision. With its focus on real-time vision, OpenCV helps students and professionals efficiently implement projects and jump-start research by providing them with a computer vision and machine learning infrastructure that was previously available only in a few mature research labs.</p>
+
+<p>There&#39;s no problem with Matlab(R) but it takes much of the time and is not advisable to use for realtime applications like <a title="Image Processing: From the ‘Sixth Sense’ view." href="/2012/07/10/image-processing-1/">SixthSense</a> project. So if you would have followed the procedure it will work but it will work slowly. Its because it interprets each statement of the whole code at the same time while we know in C/C++ it compiles first and then we could execute the whole program at once.</p>
+
+<p>From that you all would have got that OpenCV works on C/C++ cross compilers. OpenCV is nothing but a collection of C/C++ libraries used for image processing algorithms as functions. For example we used imread command in Matlab® here also in OpenCV we have imread(); the arguments differ. Now as a plus point of good realtime speed we should have some difficulties too. The main drawback is its based on C/C++ or python so eventually it would be somewhat difficult to use and as it just includes libraries it has some problems with its installation too.</p>
+
+<p>More introduction on OpenCV is given at the following web sites:</p>
+
+<p><a href="http://opencv.org/">http://opencv.org</a> Main Site</p>
+
+<p><a href="http://opencv.willowgarage.com/">http://opencv.willowgarage.com</a> Wiki</p>
+
+<p><a href="http://docs.opencv.org/">http://docs.opencv.org</a> Documentation &amp; tutorials</p>
+
+<p><a href="http://aishack.in/">http://aishack.in</a> Blog about OpenCV Tutorials &amp; its installation in Windows</p>
+
+<p>The following are the steps for installation of OpenCV on <a class="zem_slink" title="Ubuntu (operating system)" href="http://en.wikipedia.org/wiki/Ubuntu_%28operating_system%29" target="_blank" rel="wikipedia">Ubuntu</a>: (Tested on 12.04 64-bit but it should work perfectly on other ubuntu derivatives too)</p>
+
+<p><b>Step 1:</b> Download following Required packages. (Skip this step if your internet bandwidth is over 1-2 Mbps (Recommended to skip)):<br>
+<ul>
+<ul>
+    <li> OpenCV Main Library For Linux (ofcourse):   <a href="http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.3/OpenCV-2.4.3.tar.bz2/download">http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.3/OpenCV-2.4.3.tar.bz2/download</a></li>
+    <li> x264 (Download The Latest):<a href="ftp://ftp.videolan.org/pub/videolan/x264/snapshots/x264-snapshot-20121114-2245-stable.tar.bz2">ftp://ftp.videolan.org/pub/videolan/x264/snapshots</a>/  </li>
+    <li> ffmpeg(latest): <a href="http://ffmpeg.org/releases/">http://ffmpeg.org/releases/</a>  </li>
+    <li> v4l: <a href="http://www.linuxtv.org/downloads/v4l-utils/">http://www.linuxtv.org/downloads/v4l-utils/</a>  </li>
+</ul>
+</ul>
+ <b>Step 2:</b> After Downloading you need to install many other libraries so now I assume that you have downloaded this all files in the following folder  </p>
+
+<p>/home/$USER/Downloads/OpenCV/*.tar.bz2  </p>
+
+<p><b>Step 3:</b> Download The following Shell Script file and run it in terminal with the PWD as /home/$USER/Downloads/OpenCV  </p>
+
+<p>Shell Script : with downloaded library : <a href="http://db.tt/pgEuOKK2">http://db.tt/pgEuOKK2</a>  </p>
+
+<p>Download at the run time : <a href="http://db.tt/U1r9FH7N">http://db.tt/U1r9FH7N</a> (Recommended)  </p>
+
+<p>For execution just type sudo sh opencv*.sh</p>
+
+<p>The script has been cloned from : https://github.com/jayrambhia/Install-OpenCV</p>
+
+</div>
+
+<div class="sharebuttons">
+<!-- Twitter -->
+<div style="float:right">
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="dtchanpura" data-hashtags="DCprime">Tweet</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>
+</div>
+<!-- Facebook<div class="fb-share-button" data-type="button_count" data-annotation=inline></div>
+-->
+
+<!-- Google Plus -->
+<div style="float:left;">
+	<script type="text/javascript" src="https://apis.google.com/js/platform.js"></script>
+	<div class="g-plusone" data-size="medium" data-annotation="bubble"></div>
+</div><br>
+</div>
+
+        <div class="footer">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="front">
+                <div class="contact">
+                  <center width=200px>Darshil Chanpura<br />Developer:Designer<br />dcprime314@gmail.com<!--</center>-->
+                </div>
+              </div>
+              <div class="back">
+                <div class="contact" id="icons">
+                  <center width=200px>
+                    <a href="mailto:dcprime314@gmail.com"><img src="/logo/gmail-512.png" width=48 alt="Mail to dtchanpura" /></a>
+                    <a href="https://github.com/dtchanpura"><img src="/logo/github.png" width=48 alt="Github @dtchanpura" /></a>
+                    <a href="http://google.com/+DarshilChanpura"><img src="/logo/google.png" width=48 alt="Google +Darshil Chanpura" /></a><br />
+                    <a href="https://twitter.com/dtchanpura"><img src="/logo/twitterICO.png" width=48 alt="Follow @dtchanpura" /></a>
+                    <a href="http://facebook.com/dtchanpura"><img src="/logo/facebook.png" width=48 alt="Facebook/dtchanpura" /></a>
+                    <a href="irc://irc.freenode.net/dcprime"><img src="/logo/irclogo.png" width=48 alt="IRC #dcprime"/></a>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

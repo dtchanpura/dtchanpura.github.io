@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{{ page.title }} - {{site.name}} </title>
+  <meta name="viewport" content="width=device-width">
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Cantarell' rel='stylesheet' type='text/css'>
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css" media="screen">
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-47877573-1']);
+          _gaq.push(['_trackPageview']);
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+</head>
+<body>
+      <div class="site">
+        <div class="headbar">
+          <h1><div class="dark">DCPrime's</div><div class="light">Blog</div></h1>
+          <div class="navbar">
+            <a href="/">Blog</a>
+            <a class="extra" href="/about.html">About</a>
+            <!--<a class="extra" href="/draft.html">Drafts</a>
+            <a class="extra" href="/review.html">Reviews</a>	-->
+            <br />
+          </div>
+        </div>
+        <!--    <div class="header">
+        <h1 class="tfitle"><a href="/">{{ site.name }}</a></h1>
+        <a class="extra" href="/">Home</a>
+        </div>-->
+
+        {{ content }}
+        <div class="footer">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="front">
+                <div class="contact">
+                  <center width=200px>Darshil Chanpura<br />Developer:Designer<br />dcprime314@gmail.com<!--</center>-->
+                </div>
+              </div>
+              <div class="back">
+                <div class="contact" id="icons">
+                  <center width=200px>
+                    <a href="mailto:dcprime314@gmail.com"><img src="/logo/gmail-512.png" width=48 alt="Mail to dtchanpura" /></a>
+                    <a href="https://github.com/dtchanpura"><img src="/logo/github.png" width=48 alt="Github @dtchanpura" /></a>
+                    <a href="http://google.com/+DarshilChanpura"><img src="/logo/google.png" width=48 alt="Google +Darshil Chanpura" /></a><br />
+                    <a href="https://twitter.com/dtchanpura"><img src="/logo/twitterICO.png" width=48 alt="Follow @dtchanpura" /></a>
+                    <a href="http://facebook.com/dtchanpura"><img src="/logo/facebook.png" width=48 alt="Facebook/dtchanpura" /></a>
+                    <a href="irc://irc.freenode.net/dcprime"><img src="/logo/irclogo.png" width=48 alt="IRC #dcprime"/></a>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

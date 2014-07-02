@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Introduction to Raspberry Pi - DCPrime's Blog </title>
+  <meta name="viewport" content="width=device-width">
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Cantarell' rel='stylesheet' type='text/css'>
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css" media="screen">
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-47877573-1']);
+          _gaq.push(['_trackPageview']);
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+</head>
+<body>
+      <div class="site">
+        <div class="headbar">
+          <h1><div class="dark">DCPrime's</div><div class="light">Blog</div></h1>
+          <div class="navbar">
+            <a href="/">Blog</a>
+            <a class="extra" href="/about.html">About</a>
+            <!--<a class="extra" href="/draft.html">Drafts</a>
+            <a class="extra" href="/review.html">Reviews</a>	-->
+            <br />
+          </div>
+        </div>
+        <!--    <div class="header">
+        <h1 class="tfitle"><a href="/">DCPrime's Blog</a></h1>
+        <a class="extra" href="/">Home</a>
+        </div>-->
+
+        <h2>Introduction to Raspberry Pi</h2>
+<div class="meta">
+Published on 02 Jan 2014
+</div><br>
+<div class="post">
+<p>Firstly I wish you a very Happy New year. This year I was thinking of taking a new year resolution as to write at least one post every week. I know that&#39;s quite tough for me but will try my level best. I am very happy to announce that I just received a Raspberry Pi (RasPi, aliased). Raspberry Pi is a small computer which is having a powerful processor clocked at 700MHz and a 512MB of RAM. This might be too technical but believe me when you get the full introduction to RasPi you will really think to buy one.</p>
+
+<p>Raspberry Pi is a small computer which is been designed in &quot;the UK&quot;. I am saying it as computer but actually its a small credit card sized board which has an ARM processor which is a Broadcom SoC (system on chip) which includes a GPU, 512MB RAM, 700MHz ARMv6 CPU.</p>
+
+<p>Now just think of those endless applications that we can make through RasPi. Though it may have lesser power than a normal PC which may have a 4GB of RAM and some Intel Processor clocked at 2GHz to 3GHz but that is also somewhat costly. But now at that cheaper cost we are getting much more that required. </p>
+
+<p>ARM. ARM is Advanced RISC Machines firstly developed by Acron Computers. They have just made the Core architechture and they license it to the manufacturers for making the end user or end prototype chip. This is the strategy of Acorn. ARM has different revisions which are known as versions for more information on ARM visit <a href="http://arm.com">ARM</a> or read about it at <a href="http://en.wikipedia.org/wiki/ARM_architecture">Wiki.</a></p>
+
+<p>One thing that comes with ARM processors is GPIOs commonly known as General Purpose Input/Output. This can be of any number depending upon the SoC&#39;s design. Now for simple applications like home-automation, etc. GPIOs come in handy. This post is for introduction and nothing more but still I will be sharing many details about the RasPi...</p>
+
+<p>Following is the image of RasPi. How it looks like..</p>
+
+<div id="container">
+<a href="/images/raspi.jpg"><img src="/images/raspi.jpg" alt="I <3 Raspberry Pi" width=90% /></a>
+</div>
+
+<p>The next thing we need to know it what includes in the package. This following shows the different components of RasPi. Processor, 2 USB, Power Input (microusb), SDcard Slot (SDcard contains boot.img for booting up the RasPi), Audio Jack, Video out as HDMI and RCA. </p>
+
+<div id="container">
+<a href="http://www.raspberrypi.org/wp-content/uploads/2011/07/RaspiModelB.png"><img src="http://www.raspberrypi.org/wp-content/uploads/2011/07/RaspiModelB.png" width=90% alt="Raspberry"/></a>
+</div>
+
+<p>The basic things you need to start a Raspberry Pi are as follows:</p>
+
+<ul>
+<li>Raspberry Pi, can be bought from <a href="http://element14.com">element14</a>.</li>
+<li>Power Supply or a simple smartphone charger with current rating greater than 700mA (for model B). </li>
+<li>SDcard, here its SDHC normal digital camera memory cards. for checking if your sdcard works with Raspi visit <a href="http://elinux.org/RPi_SD_cards">elinux.org</a>(minimum of 4GB is recommended).</li>
+<li>Ethernet Cable or WiFi USB module (for internet connection).</li>
+<li>A TV or Monitor with HDMI or RCA input (for Display).</li>
+<li>A CASE for protection.</li>
+</ul>
+
+<p>This was the basic things you need for setting up Raspi but now if you need to remove some of the components you can just connect to the ethernet and can use it via <a href="http://en.wikipedia.org/wiki/SSH">SSH</a> or <a href="http://en.wikipedia.org/wiki/Virtual_Network_Computing">VNC</a>.</p>
+
+<p>Will continue next time with installing an image on SDCard, which can be downloaded from <a href="http://www.raspberrypi.org/downloads">RPi_Downloads</a> and updating via <code>sudo apt-get update &amp;&amp; sudo apt-get upgrade</code></p>
+
+<p>End of Post.</p>
+
+</div>
+
+<div class="sharebuttons">
+<!-- Twitter -->
+<div style="float:right">
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="dtchanpura" data-hashtags="DCprime">Tweet</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>
+</div>
+<!-- Facebook<div class="fb-share-button" data-type="button_count" data-annotation=inline></div>
+-->
+
+<!-- Google Plus -->
+<div style="float:left;">
+	<script type="text/javascript" src="https://apis.google.com/js/platform.js"></script>
+	<div class="g-plusone" data-size="medium" data-annotation="bubble"></div>
+</div><br>
+</div>
+
+        <div class="footer">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="front">
+                <div class="contact">
+                  <center width=200px>Darshil Chanpura<br />Developer:Designer<br />dcprime314@gmail.com<!--</center>-->
+                </div>
+              </div>
+              <div class="back">
+                <div class="contact" id="icons">
+                  <center width=200px>
+                    <a href="mailto:dcprime314@gmail.com"><img src="/logo/gmail-512.png" width=48 alt="Mail to dtchanpura" /></a>
+                    <a href="https://github.com/dtchanpura"><img src="/logo/github.png" width=48 alt="Github @dtchanpura" /></a>
+                    <a href="http://google.com/+DarshilChanpura"><img src="/logo/google.png" width=48 alt="Google +Darshil Chanpura" /></a><br />
+                    <a href="https://twitter.com/dtchanpura"><img src="/logo/twitterICO.png" width=48 alt="Follow @dtchanpura" /></a>
+                    <a href="http://facebook.com/dtchanpura"><img src="/logo/facebook.png" width=48 alt="Facebook/dtchanpura" /></a>
+                    <a href="irc://irc.freenode.net/dcprime"><img src="/logo/irclogo.png" width=48 alt="IRC #dcprime"/></a>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

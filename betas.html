@@ -1,0 +1,21 @@
+---
+layout: default
+title: Betas
+---
+
+<div id="home">
+  <h2>{{ page.title }}</h2>
+  <div class="tabber">
+  <ul class="posts">
+    {% for post in site.posts limit:10 %}
+			{% if post.display == false %}
+    
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a> {% if post.status == "beta" %} <span style="color:red">Beta</span> {% endif %}
+      
+      </li>
+      <span>{{ post.description }}</span>
+         {% endif %}
+    {% endfor %}
+  </ul>
+  </div>
+</div>
