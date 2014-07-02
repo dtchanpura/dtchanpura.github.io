@@ -278,7 +278,11 @@ Editted CSS
 	}
 .headbar h1{
 	font-family:"Cantarell";
-	 }
+}
+.group {
+  box-shadow:0px 0px 10px #111;
+  padding:0px;
+}
 .navbar {
 
   padding:0px;
