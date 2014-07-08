@@ -8,9 +8,9 @@ title: Home
   <div class="tabber">
   <ul class="posts">{% for post in site.posts limit:10 %}{% if post.display == true %}<a class="fillbg" href="{{ post.url }}" >
     <div class="fillbg">
-      <li><b>{{ post.title }}:</b> {% if post.status == "beta" %} <span style="color:red">Beta</span> {% endif %}
+      <li><b>{{ post.title }}:</b>
       <span>{{ post.description }}
-    <span style="float:right; color:#777; padding:0px; font-size:10px">{{ post.date | date: "%d/%m/%Y" }}<br /><br /></span></span></li>
+    <span style="float:right; color:#777; padding:0px; font-size:10px">{% if post.status == "beta" %} <span style="color:red">Beta</span> {% endif %}{{ post.date | date: "%d/%m/%Y" }}<br /><br /></span></span></li>
     </div></a>
     {% endif %}{% endfor %}
   </ul>
