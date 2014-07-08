@@ -11,6 +11,11 @@ For those who don't know what frameworks are I can explain you it as a template.
 
 Frameworks are a collection of components you can use to build a website. You don't have to write all code from scratch. You can just take already existing code and reuse it. For more details about frameworks I recommend the post by Satyajit Sahoo in the References .
 
+##Django:
+
+Apart from those like Bootstrap, Skeleton, etc. there are some different kind of Web-Frameworks which are programmable and not static as just for design purposes. As you may see in most of these frameworks you can have a great design but static. So for dynamic behavior we can either use it on our computer or rather on the server itself.
+
+Django is one of the programmable framework. Now it can be used by installing a package using <code>python-pip</code> and 
 End of Post
 
 References:
