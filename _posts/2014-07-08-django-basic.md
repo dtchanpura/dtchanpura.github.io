@@ -2,7 +2,7 @@
 layout: post
 title: "The Chronicles of Django"
 categories: django
-date: 2014-07-08 00:00:01
+date: 2014-07-08 18:00:00
 status: beta
 description: "Django is a Web-Framework. It is mostly used for designing the back-end for any website but is also useful for making good websites. Some of the websites are Disqus, Instagram, Pinterest,..."
 display: true
@@ -15,7 +15,44 @@ Frameworks are a collection of components you can use to build a website. You do
 
 Apart from those like Bootstrap, Skeleton, etc. there are some different kind of Web-Frameworks which are programmable and not static as just for design purposes. As you may see in most of these frameworks you can have a great design but static. So for dynamic behavior we can either use it on our computer or rather on the server itself.
 
-Django is one of the programmable framework. Now it can be used by installing a package using <code>python-pip</code> and 
+Django is one of the programmable framework. Now it can be used by installing a package using <code>python-pip</code> and django is ready to use.
+
+To start using it just create a new project by running a python script with a argument <code>startproject</code> as <code>django-admin.py startproject</code>.
+
+The file structure is quite complex so to explain it I have this tree..
+
+<pre><code>
+|-- db.sqlite3
+|-- manage.py 			<b>Managing most of the project</b>
+|-- mysite #Project Folder
+|   |-- __init__.py
+|   |-- __init__.pyc
+|   |-- settings.py		<b>Project Settings containing</b>
+|   |-- settings.pyc 		<b>diff. dirs and apps</b>
+|   |-- urls.py
+|   |-- urls.pyc
+|   |-- wsgi.py
+|   `-- wsgi.pyc
+`-- polls			<b>app folder for an app named polls</b>
+    |-- admin.py
+    |-- admin.pyc
+    |-- __init__.py
+    |-- __init__.pyc
+    |-- models.py		<b>models file defining most of the</b>
+    |-- models.pyc 		<b>functions used for db</b>
+    |-- templates #templates for HTML
+    |   |-- index.html
+    |   `-- polls
+    |       |-- detail.html
+    |       `-- index.html
+    |-- tests.py
+    |-- urls.py 		<b>urls and its redirection and things to</b>
+    |-- urls.pyc		<b>do when this type of regex is found</b>
+    |-- views.py 		<b>view functions been called by url.py</b>
+    `-- views.pyc
+</code></pre>
+
+
 End of Post
 
 References:
