@@ -13,6 +13,8 @@ Frameworks are a collection of components you can use to build a website. You do
 
 ##Django:
 
+<div id="container"><img src="/images/django.jpg" /></div>
+
 Apart from those like Bootstrap, Skeleton, etc. there are some different kind of Web-Frameworks which are programmable and not static as just for design purposes. As you may see in most of these frameworks you can have a great design but static. So for dynamic behavior we can either use it on our computer or rather on the server itself.
 
 Django is one of the programmable framework. Now it can be used by installing a package using <code>python-pip</code> and django is ready to use.
