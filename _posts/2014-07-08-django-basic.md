@@ -54,8 +54,12 @@ The file structure is quite complex so to explain it I have this tree..
     `-- views.pyc
 </code></pre>
 
+Most of the things are shown above and that is the basic structure of a "django project". Now the thing to be noted here is its based on Python and updates may migrate it to Python ver.3 also. The other thing is Security. While going through the documentation I saw many procedures for authentication and other database related algorithms and methods.
+
+Django has a great first impressions like it has been designed in form of layers. Model Layer, View Layer and Template Layer.
 
 End of Post
 
 References:
 <a href="http://wibblystuff.blogspot.in/2014/05/why-i-like-frameworks-and-why-i-dont.html">"Why I like frameworks, and why I don't" by Satyajit Sahoo</a>
+<a href="https://docs.djangoproject.com/en/1.6/">Django Documentation</a>
