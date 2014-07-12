@@ -3,7 +3,7 @@ layout: post
 title: "The Chronicles of Django"
 categories: django
 date: 2014-07-08 18:00:00
-status: beta
+status: published
 description: "Django is a Web-Framework. It is mostly used for designing the back-end for any website but is also useful for making good websites. Some of the websites are Disqus, Instagram, Pinterest,..."
 display: true
 ---
