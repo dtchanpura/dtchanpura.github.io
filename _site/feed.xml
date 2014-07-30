@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>DCPrime&#39;s Blog</title>
+<description>Darshil Chanpura&#39;s way of explaining stuff he barely knows</description>	
+<link>http://dtchanpura.github.io/</link>
+<atom:link href="http://dtchanpura.github.io//feed.xml" rel="self" type="application/rss+xml" />
+
+<item>
+<title>The Chronicles of Django</title>
+<description>&lt;p&gt;For those who don&amp;#39;t know what frameworks are I can explain you it as a template. Web-Frameworks are like templates where the bare bone of a website is given you need to append functionalities required and some basic modifications in the framework code. An example of this kind of frameworks is &lt;a href=&quot;http://getbootstrap.com/&quot;&gt;Bootstrap&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Frameworks are a collection of components you can use to build a website. You don&amp;#39;t have to write all code from scratch. You can just take already existing code and reuse it. For more details about frameworks I recommend the post by Satyajit Sahoo in the References .&lt;/p&gt;
+
+&lt;h2&gt;Django:&lt;/h2&gt;
+
+&lt;div id=&quot;container&quot;&gt;&lt;img src=&quot;/images/django.jpg&quot; /&gt;&lt;/div&gt;
+
+&lt;p&gt;Apart from those like Bootstrap, Skeleton, etc. there are some different kind of Web-Frameworks which are programmable and not static as just for design purposes. As you may see in most of these frameworks you can have a great design but static. So for dynamic behavior we can either use it on our computer or rather on the server itself.&lt;/p&gt;
+
+&lt;p&gt;Django is one of the programmable framework. Now it can be used by installing a package using &lt;code&gt;python-pip&lt;/code&gt; and django is ready to use.&lt;/p&gt;
+
+&lt;p&gt;To start using it just create a new project by running a python script with a argument &lt;code&gt;startproject&lt;/code&gt; as &lt;code&gt;django-admin.py startproject&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The file structure is quite complex so to explain it I have this tree..&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+|-- db.sqlite3
+|-- manage.py           &lt;b&gt;Managing most of the project&lt;/b&gt;
+|-- mysite #Project Folder
+|   |-- __init__.py
+|   |-- __init__.pyc
+|   |-- settings.py     &lt;b&gt;Project Settings containing&lt;/b&gt;
+|   |-- settings.pyc        &lt;b&gt;diff. dirs and apps&lt;/b&gt;
+|   |-- urls.py
+|   |-- urls.pyc
+|   |-- wsgi.py
+|   `-- wsgi.pyc
+`-- polls           &lt;b&gt;app folder for an app named polls&lt;/b&gt;
+    |-- admin.py
+    |-- admin.pyc
+    |-- __init__.py
+    |-- __init__.pyc
+    |-- models.py       &lt;b&gt;models file defining most of the&lt;/b&gt;
+    |-- models.pyc      &lt;b&gt;functions used for db&lt;/b&gt;
+    |-- templates #templates for HTML
+    |   |-- index.html
+    |   `-- polls
+    |       |-- detail.html
+    |       `-- index.html
+    |-- tests.py
+    |-- urls.py         &lt;b&gt;urls and its redirection and things to&lt;/b&gt;
+    |-- urls.pyc        &lt;b&gt;do when this type of regex is found&lt;/b&gt;
+    |-- views.py        &lt;b&gt;view functions been called by url.py&lt;/b&gt;
+    `-- views.pyc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Most of the things are shown above and that is the basic structure of a &amp;quot;django project&amp;quot;. Now the thing to be noted here is its based on Python and updates may migrate it to Python ver.3 also. The other thing is Security. While going through the documentation I saw many procedures for authentication and other database related algorithms and methods.&lt;/p&gt;
+
+&lt;p&gt;Django has a great first impressions like it has been designed in form of layers. Model Layer, View Layer and Template Layer.&lt;/p&gt;
+
+&lt;p&gt;End of Post&lt;/p&gt;
+
+&lt;p&gt;References:
+&lt;a href=&quot;http://wibblystuff.blogspot.in/2014/05/why-i-like-frameworks-and-why-i-dont.html&quot;&gt;&amp;quot;Why I like frameworks, and why I don&amp;#39;t&amp;quot; by Satyajit Sahoo&lt;/a&gt;
+&lt;a href=&quot;https://docs.djangoproject.com/en/1.6/&quot;&gt;Django Documentation&lt;/a&gt;&lt;/p&gt;
+</description>
+<pubDate>Tue, 08 Jul 2014 23:30:00 +0530</pubDate>
+<link>http://dtchanpura.github.io//django/2014/07/08/django-basic.html</link>
+<guid isPermaLink="true">http://dtchanpura.github.io//django/2014/07/08/django-basic.html</guid>
+</item>
+
+<item>
+<title>Twitter + Python + Raspberry Pi</title>
+<description>&lt;p&gt;In earlier post we discussed about GPIOs and now we will use them with interfacing LCD of 16x2 (I am using 20x4) for displaying Tweets of some #hashtag (#DCPrimeRPi) or @someuser (@dtchanpura) on LCD. I am using a module named Twython which I came across while searching for a tweetbot. Well I did find a Tweeting Bot but never made that on my Raspberry Pi just reinvented and made a small display to show the thoughts about it.&lt;/p&gt;
+
+&lt;div id=&quot;container&quot;&gt;&lt;img src=&quot;/images/tweet_on_lcd.jpg&quot; /&gt;&lt;/div&gt;
+
+&lt;p&gt;This post will take you to the a way how you can use two different modules and make use of both at once.&lt;/p&gt;
+
+&lt;h2&gt;LCD:&lt;/h2&gt;
+
+&lt;p&gt;For interfacing LCD with Raspberry Pi we have connected it the following manner.&lt;/p&gt;
+
+&lt;p&gt;As seen the LCD is interfaced and it will be able to show what we want. Now comes the &amp;quot;Hard Part&amp;quot; (For me as I belong to Electronics and not Computer so Connections are easy) which is coding. Fortunately there is a Library available by Adafruit which allows to use a character LCD. I have modified it a little bit and you can have it from &lt;a href=&quot;http://github.com/dtchanpura/DCPrimeRPi&quot;&gt;github.com/dtchanpura/DCPrimeRPi&lt;/a&gt;. This is having an ability to use long sentences without special characters whose ASCII goes above some number as we are using LCD in 4bit mode.&lt;/p&gt;
+
+&lt;p&gt;Code is quite simple as for start to display something we just need a place where we can give the variable name of a string. So following is hello world code for a LCD display. (Cloned from my Repo DCPrimeRPi)&lt;/p&gt;
+
+&lt;h3&gt;CODE:&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/env python
+
+from lcdDisplay import lcdDisplay
+lcd = lcdDisplay() #Object named lcd for
+#using all the functions of lcdDisplay.py
+
+lcd.begin(20,3)
+
+lcd.clear()
+i=0
+lcd.longmessage(&quot;The Quick Brown
+Fox Jumps over a Lazy Dog.The Quick
+Brown Fox Jumps over a Lazy Dog.The
+Quick Brown Fox Jumps over a Lazy Dog.
+The Quick Brown Fox Jumps over a.&quot;)
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;So here we can see I have used only around 160 characters (Limit of Tweet.) and it does display it better but the well known types of LCDs are having only 16x2 = 32 characters. So how to show.. is a big question here.&lt;/p&gt;
+
+&lt;p&gt;To show more characters I looked upon and thought how in a movie the end-titles are shown. &amp;quot;One by One.&amp;quot; That has been used here. Now to do so I have made a new function (the change in Adafruit&amp;#39;s Module) now this needs to go deep. Like we have to see how is the display function made. Now lets have a look on the display function which is &lt;code&gt;lcd.message()&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; def message(self, text):
+        &quot;&quot;&quot; Send string to LCD. Newline wraps to second line&quot;&quot;&quot;
+
+        for char in text:
+            if char == &#39;\n&#39;:
+                self.write4bits(0xC0) # next line
+            else:
+                self.write4bits(ord(char),True)
+
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This code has a Defect like it just displays the static text or some dynamic test limited to 32 characters but ours is quite more. Like &lt;i&gt;@dtchanpura: #DCPrimeRPi Tweeting with this hash tag for some reason&lt;/i&gt; Considering this for making it fit in 32 characters we need to split it in blocks of 32. But in such a way that there&amp;#39;s a repetition from change in screen. Like as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@dtchanpura:
+\#DCPrimeRPi Twee
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;\#DCPrimeRPi Twee
+ting with this ha
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;sh tag for some r
+eason
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So to do so we need to modify the program a bit (or a lot). So i have added a new function which is just for displaying the long messages and the function is named &lt;code&gt;longmessage()&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For this we will divide the string into mainly 4 different parts as we can see in above tweet its 3 parts. So to divide we will split the string with 16 characters at once which are then repeated in another list as shown below.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[&#39;#DCPrimeRPi Twee&#39;,&#39;ting with this ha&#39;,&#39;sh tag for some r&#39;,&#39;eason&#39;]&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will show us that use only two lines or four lines at once. There are many people who are using 4 line LCDs and I was one of them I started debugging and editting the code so that I can show the whole 160 characters in some scroll effect without missing any line.&lt;/p&gt;
+
+&lt;p&gt;The change is shown below.
+&lt;pre&gt;&lt;code&gt;
+def longmessage(self, text):
+  # text=str(text)
+  if len(text)&lt;80:
+    text=text+&#39; &#39;\*(80-len(text))
+    li=0
+    for char in text:
+      if char==&#39;\n&#39;:
+        text = text[:li] + &#39; &#39; + text[li+1:]
+        li+=1
+        text1=self.splitnumv2(4, self.splitnum(20,text))
+        print text1
+        text1=text1[:len(text1)-3]
+        &quot;&quot;&quot; Send string to LCD. Newline wraps to second line&quot;&quot;&quot;
+        for screen in text1:
+          self.home()
+          l=0
+          \# self.clear()
+          for line in screen:
+            line=line+&#39; &#39;\*(20-len(line))
+            for char in line:
+              l+=1
+              self.write4bits(ord(char),True)
+              if l==20:
+                self.write4bits(self.LCD_LINE2) \# 2nd line
+              elif l==40:
+                self.write4bits(self.LCD_LINE3) \# 3rd line \# changed
+              elif l==60:
+                self.write4bits(self.LCD_LINE4) \# 4th line \#changed
+          sleep(4)
+&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;This code has just one change it will be making a group of four and then removing one from start and append new line at the end. In this way we call this group of four lines a screen and this screen stays for 4 secs as mentioned in the last line of the code.&lt;/p&gt;
+
+&lt;h2&gt;Twitter:&lt;/h2&gt;
+
+&lt;p&gt;The half part was done for displaying but what to display? Twitter is useful and also well known for the short messages that are broadcast so we here will be using that API given by Twitter and ported to Python by the name Twython.&lt;/p&gt;
+
+&lt;p&gt;To use it we just need a Twitter account and some application which you can easily get from &lt;a href=&quot;https://apps.twitter.com/app/new&quot;&gt;http://apps.twitter.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Installing Twython on Raspi:&lt;/h3&gt;
+
+&lt;p&gt;For installing we need to install the &lt;code&gt;python-setuptools&lt;/code&gt; like &lt;code&gt;pip&lt;/code&gt; to do so we just type in the following commands. So by using &lt;code&gt;pip&lt;/code&gt; we install the whole API of Twitter which has been already ported to Python.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install python-setuptools
+sudo easy_install pip
+sudo pip install twython&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Registering Twitter Application:&lt;/h3&gt;
+
+&lt;p&gt;Go to &lt;a href=&quot;https://apps.twitter.com/&quot;&gt;http://apps.twitter.com&lt;/a&gt; sign in or sign up for creating a new application. This will give following kind of screen which needs the name and its url if used. Fill up the full form and then it will ask for the authentication and rights. It simply means is this app been used for read purpose or also for writing i.e. just reading tweets or for tweeting too. It can be used if someone wants to share the output to some command and directly share on Twitter.
+&lt;div id=&quot;container&quot;&gt;&lt;img src=&quot;/images/newapp_twitter.png&quot; /&gt;&lt;/div&gt;
+Now after creating the app you will see the authentication keys or access tokens. Keep them safe they are important and secret. Also we will need them for the Pi.
+&lt;div id=&quot;container&quot;&gt;&lt;img src=&quot;/images/access_token.jpg&quot; /&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;h3&gt;Summing things up...&lt;/h3&gt;
+
+&lt;p&gt;After installing twython and creating an app we need to add our code to Pi.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir TweetMon &amp;&amp; cd TweetMon
+git clone http://github.com/dtchanpura/DCPrimeRPi.git -b CLCD&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This repository has all the prerequisites for this project. The thing needed to add in it is the access codes so for that create a new file with path in the directory &lt;code&gt;DCPrimeRPi/CLCD_python/twitter_keys.py&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Now its all done the code has the comments and is self explanatory. It does search for a hashtag which uses the command api.search and then returns the values to lcd.longMessage().&lt;/p&gt;
+
+&lt;p&gt;So at the end it may look like this...&lt;/p&gt;
+
+&lt;div id=&quot;container&quot;&gt;&lt;img src=&quot;/images/tweet_on_lcd.jpg&quot; /&gt;&lt;/div&gt;
+
+&lt;p&gt;End of Post&lt;/p&gt;
+
+&lt;p&gt;References:&lt;/p&gt;
+
+&lt;p&gt;http://www.makeuseof.com/tag/how-to-build-a-raspberry-pi-twitter-bot/&lt;/p&gt;
+
+&lt;p&gt;Images from adafruit/flickr&lt;/p&gt;
+</description>
+<pubDate>Fri, 23 May 2014 19:41:59 +0530</pubDate>
+<link>http://dtchanpura.github.io//raspi/2014/05/23/twitter-plus-python-equals-twython.html</link>
+<guid isPermaLink="true">http://dtchanpura.github.io//raspi/2014/05/23/twitter-plus-python-equals-twython.html</guid>
+</item>
+
+<item>
+<title>Evolution: Electronics...</title>
+<description>&lt;p&gt;Electronics have been the booming field among most of the fields. Electronics is now a days explained simply as the base of many (I mean all) devices which have an ability do anything smart.&lt;/p&gt;
+
+&lt;p&gt;But thats not just true. There are lot many things which are more to Electronics. This is just a way of saying thank you to &amp;quot;Electronics&amp;quot; which I thought I should as I have been using a lot of it now a days. Also my laptop from where I am typing. But now it is not just a Laptop which can be used as a portable computer, a phone which can be and soon there will be a small watch which will have a powerful processor calling for using the power somewhere else if needed.&lt;/p&gt;
+
+&lt;p&gt;Well all started with 4 bit processors and now we have a compliance of 32- or 64-bit processing on one chip. But the thing is we (esp. I) was not even born when the first computer was booted up. Well it might be but i gained some knowledge only after 1999 which was the time I saw or used first computer. Anyone want to guess the specifications.. ah.. it was a celeron processor with 32 mega-bytes of RAM and 4.0 GB of Hard-Drive. and now even my phone has a 2.0 GB of RAM and a Snapdragon 1.5GHz Dual Core Processor. So we can say its evolving.&lt;/p&gt;
+
+&lt;p&gt;Smaller the size and better the performance makes it quite useful. This shows that there&amp;#39;s no place where electronic item is not used. But yeah the topic is about evolution and not a survey. So here&amp;#39;s an image and a story there after about me.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/evolve.jpg&quot;&gt;&lt;div id=&quot;container&quot;&gt;&lt;img src=&quot;/images/thumbs/evolve_thumb.jpg&quot; /&gt;&lt;/div&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4&gt;Story:&lt;/h4&gt;
+
+&lt;p&gt;I am a 21 year old student working on different programming platforms/languages like Assembly, C/C++, Python, etc. Now it may seem very unthinkable programming a graphics LCD using 8051 and that too in assembly (plus from scratch). So to minimize we have Embedded C which is very useful for some pretty tough tasks like this. So how the journey started. I was in my 5th grade and I started knowing what programming language BASIC but now i don&amp;#39;t know how it looked like. The point here is knowing is just a start we need to go deep. So I talked to my dad he is a Professor and taught me the advanced electronics. Like you may think I was not knowing what/how transistor works but yeah I was having some idea about programming in a 8085.&lt;/p&gt;
+
+&lt;p&gt;This all changed when I entered in College. &amp;quot;The Basics&amp;quot;. Well college taught me the basics and from that I just came to one conclusion that I can am somewhere behind the time. But yeah sometimes it helps. Never mind earlier that I was using Assembly and now something called &amp;quot;Arduino&amp;quot;. Well see the picture shows the way of evolving and what I have seen till now. I am just a simple person who does not have much to show but yeah I have been to that situation when you know what happens inside the big/small machines.&lt;/p&gt;
+
+&lt;p&gt;Well then came this Beagle Bones and Raspberry Pis. A part of me just shook when I heard about it and used it for the first time. Its just feels like debugging a code you know whats gonna happen next. But debugging is easy in coding but when it comes to change hardware its tough. This was the thing I loved about being in Electronics which gave me power to understand both Heart(hardware) and the Brain(software).&lt;/p&gt;
+
+&lt;p&gt;The moment when you know how things work from the inside not because you coded it but how the machine understood is the moment of lifetime. Don&amp;#39;t Miss it..Be a part in Evolution..&lt;/p&gt;
+</description>
+<pubDate>Fri, 16 May 2014 04:31:01 +0530</pubDate>
+<link>http://dtchanpura.github.io//misc/2014/05/16/evolution-in-electronics.html</link>
+<guid isPermaLink="true">http://dtchanpura.github.io//misc/2014/05/16/evolution-in-electronics.html</guid>
+</item>
+
+<item>
+<title>Presenting using reveal.js</title>
+<description>&lt;p&gt;Being in a person in a field where he has to present his thoughts and his work. Powerpoint or Impress (from Apache OpenOffice.org or LibreOffice) are pretty good but it needs one of them for presenting. But what if we can make things present without them.&lt;/p&gt;
+
+&lt;p&gt;The trio HTML5, CSS3 and JS have really big impact on this generation of Internet/Web. The same way it has converted the web browser not only into HTML parser like showing or displaying websites but a well designed web display and parser.&lt;/p&gt;
+
+&lt;p&gt;I just came across &lt;a href=&quot;http://slid.es&quot;&gt;Slides&lt;/a&gt;. Which used the presentation javascript called &lt;a href=&quot;http://hakim.se/projects/reveal-js&quot;&gt;reveal.js&lt;/a&gt; a project by Hakim El Hattab. The best use of CSS i have seen till now.&lt;/p&gt;
+
+&lt;p&gt;Now that&amp;#39;s simple we just have to clone the framework add the presentation in form of html file and then it will parse most of the required controls for slide-show.&lt;/p&gt;
+
+&lt;p&gt;The following is the screenshot of the sample slide but you can surely see the demos at slid.es which just sign up and start creating great designs.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;a href=&quot;http://lab.hakim.se/reveal-js/#/&quot;&gt;&lt;div id=&quot;container&quot;&gt;&lt;img src=&quot;/images/reveal.png&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;It has a great tutorials but I just prefer to keep it simple so i cloned the latest from github by
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/hakimel/reveal.js.git&lt;/pre&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For your presentation just type-in or edit the sections. Even if one is not good at html he/she can just go to slid.es and make use of the online editor and export in form of html code. Just add the copied code inside the &lt;code&gt;&amp;lt;div class=&amp;quot;reveal&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;&lt;code&gt;&lt;/p&gt;
+
+&lt;p&gt;That&amp;#39;s it and it does have many features like themes, effects and insertion of medias, etc. It is quite useful who has most of the usage while presenting or demostrating in browsers.&lt;/p&gt;
+</description>
+<pubDate>Sun, 11 May 2014 17:30:00 +0530</pubDate>
+<link>http://dtchanpura.github.io//html/2014/05/11/presentation-on-the-go.html</link>
+<guid isPermaLink="true">http://dtchanpura.github.io//html/2014/05/11/presentation-on-the-go.html</guid>
+</item>
+
+<item>
+<title>Using GPIOs of Raspberry Pi</title>
+<description>&lt;h2&gt;GPIOs:&lt;/h2&gt;
+
+&lt;p&gt;GPIO is an ancronym for General Purpose Input Output. GPIO is mainly been named for ARM architectural input output pins. Now for using these pins on ARM processor is quite tough as there are many usage of single pin for many different purposes. For example, usage of ALE signal for separating Address and Data from the same multiplexed Address and Data Bus in many general purpose processors like 8085,x86, etc.&lt;/p&gt;
+
+&lt;p&gt;In Raspberry Pi there&amp;#39;s a separate connector of 13x2 pins labeled as GPIO. Here we can get most of the communication related pins such as,&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;RxD, TxD for RS232 Communication&lt;/li&gt;
+&lt;li&gt;SDClk, SData for I2C Communication/Protocol&lt;/li&gt;
+&lt;li&gt;MOSI, MISO, CE0, CE1, SCLK for Serial Peripheral Interface&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These can be easily implemented. For example if you want to make a project that displays data from some I2C IC we can directly use it using some isolation&lt;a title=&quot; We Will SEE later&quot;&gt;*&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;There are 17 GPIO pins (out of total 26) Out of these 17 we can use 6 GPIO pins for exclusively I/O purposes rest are been shared with pins I mentioned earlier. &lt;/p&gt;
+
+&lt;p&gt;So for small applications like interfacing LEDs or some LCD related projects you can use this. But if you are planning some big things like interfacing Keypad, TouchScreen, etc. you may need an Arduino Interfaced with Raspi.&lt;/p&gt;
+
+&lt;p&gt;Now we talked enough about this GPIO we can implement this using &lt;a title=&quot;That&#39;s Right&quot;&gt;Python&lt;/a&gt;. But the question is HOW!!. &lt;/p&gt;
+
+&lt;p&gt;The answer is we can use this GPIOs to be used as Input/Output which is defined by importing the module named &lt;code&gt;RPi.GPIO&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For Raspi Embedded Linux is been providing great resource and usage documentation for almost everything starting from SD card setup to making it a Webserver. Just we need to connect them in a way to proceed for an Application.&lt;/p&gt;
+
+&lt;p&gt;I have made an application to display Date and Time with the total Data Transfer on Raspi since boot + a greet message.&lt;/p&gt;
+
+&lt;p&gt;So for any application you will make a Python File (with extension &lt;code&gt;.py&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s use for simple LED example. To know how a RPi.GPIO module works&lt;/p&gt;
+
+&lt;h3&gt;Step 1:&lt;/h3&gt;
+
+&lt;p&gt;Update and Upgrade the system:&lt;/p&gt;
+
+&lt;p&gt;For best results I recommend using Raspbian (Debian Variant) so just type-in following commands.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get upgrade&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Step 2:&lt;/h3&gt;
+
+&lt;p&gt;After upgrading check the version of RPi.GPIO installed on Raspi. To do the same open Python as root and import it and type in GPIO.version&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo python
+import RPi.GPIO as GPIO
+GPIO.VERSION&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Version should be around 0.5.4.&lt;/p&gt;
+
+&lt;h3&gt;Step 3:&lt;/h3&gt;
+
+&lt;p&gt;If every thing is good try to make a file named &lt;code&gt;newfile.py&lt;/code&gt; to do so we will make a new file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir ~/gpio
+cd ~/gpio
+nano newfile.py
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Editor will open up type in following commands for importing GPIO module.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import RPi.GPIO as GPIO
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will let us to use &lt;code&gt;setmode&lt;/code&gt; and &lt;code&gt;setup&lt;/code&gt; functions of GPIO.&lt;/p&gt;
+
+&lt;h3&gt;Step 4:&lt;/h3&gt;
+
+&lt;p&gt;Now we will move forward for defining a GPIO pin as input or output and also which numbering system to use for accessing the pins.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;GPIO.setmode(GPIO.BCM)
+GPIO.setup(23, GPIO.OUT)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Consider that you have connected the LED(+ve) to pin 23 and other to ground through &lt;b&gt;470&amp;Omega;&lt;/b&gt; resistor
+&lt;div id=&quot;container&quot;&gt;&lt;img src=&quot;/images/LED_23.png&quot; width=75% /&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;So now this code says you have declared the Pin 23 as Output and as we have connected the LED to pin 23. This is just the declaration part now we need to make use of it.&lt;/p&gt;
+
+&lt;p&gt;Now lets say when we execute the python script with argument &amp;quot;ON&amp;quot; like &lt;code&gt;python newfile.py ON&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3&gt;Step 5:&lt;/h3&gt;
+
+&lt;p&gt;After Setting up we need to do execution i.e. the function as a script. &lt;/p&gt;
+
+&lt;p&gt;The logic here is to turn the LED on or off depending upon the argument given i.e. &lt;code&gt;sudo python newfile.py ON&lt;/code&gt; will turn it ON and &lt;code&gt;sudo python newfile.py OFF&lt;/code&gt; will turn it OFF. But if none is in input it will blink the LED 10 times saying as an error.&lt;/p&gt;
+
+&lt;p&gt;CODE:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from time import sleep
+import sys
+
+argmnt=str(sys.argv[1])         #Fetching First Argument
+def main():                     #MAIN Function
+    import RPi.GPIO as GPIO
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(23,GPIO.OUT)
+    if argmnt.upper() == &quot;ON&quot; or argmnt == &#39;1&#39;:
+        GPIO.output(23,True)
+    elif argmnt.upper() == &quot;OFF&quot; or argmnt == &#39;0&#39;:
+        GPIO.output(23,False)
+    else:
+        for i in range(0,10):   
+            GPIO.output(23,True)
+            sleep(1)
+            GPIO.output(23,False)
+            sleep(1)
+
+
+if __name__== &#39;__main__&#39;:
+    main()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That is the code. You can find this at &lt;a href=&quot;http://github.com/dtchanpura/DCPrimeRPi/&quot;&gt;DCPrimeRPi Repo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;End of Post&lt;/p&gt;
+</description>
+<pubDate>Wed, 05 Mar 2014 19:41:59 +0530</pubDate>
+<link>http://dtchanpura.github.io//raspi/2014/03/05/making-use-of-gpio.html</link>
+<guid isPermaLink="true">http://dtchanpura.github.io//raspi/2014/03/05/making-use-of-gpio.html</guid>
+</item>
+
+<item>
+<title>Thoughts about Mozilla&#39;s Aurora and its new Sync</title>
+<description>&lt;p&gt;Well I came across a blog post from Mozilla writing about its improved sync features and a new pre-Beta testing version browser &amp;quot;Aurora&amp;quot; for their developers. The best thing about Mozilla is its openness and they have mentioned it at many places. Still by this there aren&amp;#39;t many who are using Firefox lately, its because Chromium, or let&amp;#39;s say Google Chrome. &lt;/p&gt;
+
+&lt;p&gt;The main reason behind this was usability. Comparing Firefox with Chrome I had a better experience with chrome because of faster or speedier than Firefox. But I after some usage got to know it has been taking up so much memory and some privacy issues I really don&amp;#39;t care about both but still what if you want any of them.&lt;/p&gt;
+
+&lt;p&gt;So let&amp;#39;s come back to the topic Aurora is been developed well seems like you are using a best browser ever. Still has some bugs but it will fixed soon in the version 29. the UI is quite good its having some great features of customization like giving shortcuts for browser settings like history, downloads, new tab or sync.&lt;/p&gt;
+
+&lt;p&gt;&amp;quot;Sync&amp;quot;: Well it took me around 2 days to figure out how sync works and syncing my devices or to know how to sync two of my devices earlier in old Firefox. The settings were for mostly the developers and not that user friendly. But they have achieved a success in making it user friendly like chrome. Just sign in with your email address and choose password of your choice. That&amp;#39;s it. Now it may seem why they didn&amp;#39;t add it in the first place. let&amp;#39;s stick to it that they didn&amp;#39;t consider it important because after knowing how to sync I also was thinking it as it was so simple.&lt;/p&gt;
+
+&lt;p&gt;You can expect a good result from Firefox but the most users are liking chrome because of the integration of most of its Google products. The time when users think they want to use a normal Browser rather than a fully functioning OS that time a user will come back to Firefox. I even use Firefox mostly but some things like many special effects like animations are only used in Chrome (and to some extent Safari). &lt;/p&gt;
+
+&lt;p&gt;I am hoping that the goal of Firefox achieving one of the best browser will be accomplished soon and hats off to all the contributors.&lt;/p&gt;
+
+&lt;p&gt;Here are some of the screenshots for Aurora and the way it looks. Its look is almost the same but you can expect some changes and the other one is from my Nexus using Aurora for a day and its not much different from original Firefox just changed a bit.
+&lt;div id=&quot;container&quot;&gt;
+&lt;a href=&quot;/images/aurora_ss_desktop.jpg&quot;&gt;&lt;img src=&quot;/images/aurora_ss_desktop.jpg&quot; alt=&quot;Aurora ScreenShot&quot; height=200/&gt;&lt;/a&gt;&lt;a href=&quot;/images/aurora_ss_mobile.png&quot;&gt;&lt;img height=200 alt=&quot;Aurora ScreenShot&quot; src=&quot;/images/aurora_ss_mobile_thumb.png&quot; /&gt;&lt;/a&gt;&lt;a href=&quot;/images/aurora_ss_mobile_1.png&quot;&gt;&lt;img src=&quot;/images/aurora_ss_mobile_1_thumb.png&quot; height=200 /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;The feature is about 3D representation of A whole Web Page. I have attaches the screenshots and you can see it is having the blog which your a reading right now. and the github page. There are towers for G+ button and the other for tweet but as my webpage is simple it does not have any of the different &lt;code&gt;div&lt;/code&gt;&amp;quot;s &lt;/p&gt;
+
+&lt;div id=&quot;container&quot;&gt;
+&lt;a href=&quot;/images/model_3d.PNG&quot;&gt;&lt;img height=100 alt=&quot;Aurora ScreenShot&quot; src=&quot;/images/model_3d_thumb.jpg&quot; /&gt;&lt;/a&gt;&lt;a href=&quot;/images/model_3d_github.PNG&quot;&gt;&lt;img src=&quot;/images/model_3d_github_thumb.jpg&quot; height=100 /&gt;&lt;/a&gt;
+
+
+&lt;a href=&quot;//affiliates.mozilla.org/link/banner/52924&quot;&gt;&lt;img src=&quot;//affiliates.mozilla.org/media/uploads/banners/a47240839834560ba213f2ed7df82697d6bc7766.png&quot; alt=&quot;Download Aurora&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+</description>
+<pubDate>Mon, 10 Feb 2014 06:11:59 +0530</pubDate>
+<link>http://dtchanpura.github.io//review/2014/02/10/thoughts-regarding-aurora.html</link>
+<guid isPermaLink="true">http://dtchanpura.github.io//review/2014/02/10/thoughts-regarding-aurora.html</guid>
+</item>
+
+<item>
+<title>Things to do after getting a Raspberry Pi.</title>
+<description>&lt;p&gt;So as the title says &amp;quot;What to do after getting a RasPi&amp;quot; the post will lead you to many ways of starting a RasPi &lt;a title=&quot;i mean booting it up&quot;&gt;(*)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Raspberry Pi is a small computer, but with lesser processing power so we cannot boot a Windows or Other Biggies (:-P directly). So which OSes are supported?&lt;/p&gt;
+
+&lt;p&gt;There are most OSes which are working on a normal PC can be ported to Raspi, but with some predefined constraints in terms of speed and performance. But still the question remains unanswered .. Which OSes does Raspi support? The following Linux Distros which have been officially ported to Raspi&amp;#39;s hardware profile namely.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&quot;/images/Raspbian_web.png&quot; height=25 /&gt;Debian (Raspbian)&lt;/li&gt;
+&lt;li&gt;&lt;img src=&quot;/images/Pidora_web.png&quot; height=25 /&gt;Fedora (Pidora)&lt;/li&gt;
+&lt;li&gt;&lt;img src=&quot;/images/Raspbmc_web.png&quot; height=25 /&gt;&lt;img src=&quot;/images/OpenELEC_web.png&quot; height=25 /&gt;XBMC (RaspBMC, OpenELEC)&lt;/li&gt;
+&lt;li&gt;&lt;img src=&quot;/images/arch_web.png&quot; height=25 /&gt;Arch Linux&lt;/li&gt;
+&lt;li&gt;&lt;img src=&quot;/images/RISC_OS_web.png&quot; height=25 /&gt;RISC OS (Faster and Compact)&lt;/li&gt;
+&lt;li&gt;NOOBS (New Out Of the Box Software)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So first task would be to select the OS. Now its depending on the function or application. You can define your application as if what is your purpose of the using Raspi. Now all have their pros and cons as discussed below. But before that let me brief you with the steps.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Selecting and Getting the Prerequisites like the hardware components as said earlier.&lt;/li&gt;
+&lt;li&gt;SD card with Burned Image on it of desired distribution.&lt;/li&gt;
+&lt;li&gt;That&amp;#39;s It, Boot it Up.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Following are the steps in detail..&lt;/p&gt;
+
+&lt;h3&gt;Selecting and Getting the Prerequisites:&lt;/h3&gt;
+
+&lt;p&gt;I have also said in previous post and also repeating the list. It requires following things&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Raspberry Pi, can be bought from element14.&lt;/li&gt;
+&lt;li&gt;Power Supply or a simple smartphone charger with current rating greater than 700mA (for model B).&lt;/li&gt;
+&lt;li&gt;SDcard, here its SDHC normal digital camera memory cards. for checking if your sdcard works with Raspi visit elinux.org(minimum of 4GB is recommended).&lt;/li&gt;
+&lt;li&gt;Ethernet Cable or WiFi USB module (for internet connection).&lt;/li&gt;
+&lt;li&gt;A TV or Monitor with HDMI or RCA input (for Display).&lt;/li&gt;
+&lt;li&gt;A CASE for protection.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After getting above things you need to connect all of them and configure it.&lt;/p&gt;
+
+&lt;p&gt;This is the main task of whole setup process, well it does come only after buying a Raspi &lt;a title=&quot;:-P and sd card&quot;&gt;*&lt;/a&gt;.  &lt;/p&gt;
+
+&lt;p&gt;But the question is which OS to select. We can find it easy of we cross the SD card images available for download from raspberrypi.org/downloads. So defining the goal is important.
+If the purpose is to convert TV into a smart TV or want to watch some movies and listen to music we can just use RaspBMC or OpenELEC. Which makes Raspi into a Media Center.&lt;/p&gt;
+
+&lt;p&gt;The next is the normal computer Which is a Linux computer functioning normally and can program or run some applications that can be ran on any computer OS such as Debian or Arch Linux or Fedora. so the choice is yours if you are new you recommended is Raspbian the Debian variant with LXDE installed on it.&lt;/p&gt;
+
+&lt;h3&gt;SD CARD setup:&lt;/h3&gt;
+
+&lt;p&gt;So as selection is done we need to format it and flash the image downloaded from Raspberry Pi&amp;#39;s website. The steps will be ...&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Format the sd card.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Download and flash the .img file on the formatted sd card. This can be done by many ways so for ..&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Windows users they should download the SD Formatter for formatting the card or a normal formatting tool can also work and  &lt;a href=&quot;http://sourceforge.net/projects/win32diskimager&quot;&gt; Win32DiskImager&lt;/a&gt; for flashing the image.&lt;/li&gt;
+&lt;li&gt;Linux users can directly use command line &lt;code&gt;dd if=/path/to/image.img of=/dev/sdX &lt;/code&gt;. Beware of this sdX X is the name of SD card. So to know which one is the SD card you can run commands such as &lt;code&gt;lsblk&lt;/code&gt; or &lt;code&gt;fdisk -l&lt;/code&gt; then depending upon the output select the SD card and run the command &lt;code&gt;dd&lt;/code&gt;. There&amp;#39;s also one application named Image Writer that can also help. But before flashing do format the SD card.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So we now have the SD card with image flashed in it. All we need is to boot it up.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Plug the SD card in to the slot&lt;/li&gt;
+&lt;li&gt;Connect the charger or power supply into that mini USB connector.&lt;/li&gt;
+&lt;li&gt;Ethernet Cable if necessary&lt;/li&gt;
+&lt;li&gt;Connect RCA or HDMI cable to TV for display.&lt;/li&gt;
+&lt;li&gt;Insert the USB keyboard and mouse in to the slot.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If everything goes well after starting up you will be asked for username and password. they are given in description of downloads. Here I have used Raspbian so its &lt;code&gt;pi/raspberry&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then it should show &lt;code&gt;pi@raspberrypi ~ $ &lt;/code&gt; if you&amp;#39;re connected to internet you can just try to type in these commands for making up to date softwares and applications.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sudo apt-get update &amp;amp;&amp;amp; sudo apt-get upgrade&lt;/code&gt; for Raspbian&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;pacman -Syu&lt;/code&gt; for Arch&lt;/p&gt;
+
+&lt;p&gt;End of Post&lt;/p&gt;
+</description>
+<pubDate>Sat, 08 Feb 2014 06:11:59 +0530</pubDate>
+<link>http://dtchanpura.github.io//raspi/2014/02/08/things-to-do-after-getting-a-raspberry-pi.html</link>
+<guid isPermaLink="true">http://dtchanpura.github.io//raspi/2014/02/08/things-to-do-after-getting-a-raspberry-pi.html</guid>
+</item>
+
+<item>
+<title>Introduction to Raspberry Pi</title>
+<description>&lt;p&gt;Firstly I wish you a very Happy New year. This year I was thinking of taking a new year resolution as to write at least one post every week. I know that&amp;#39;s quite tough for me but will try my level best. I am very happy to announce that I just received a Raspberry Pi (RasPi, aliased). Raspberry Pi is a small computer which is having a powerful processor clocked at 700MHz and a 512MB of RAM. This might be too technical but believe me when you get the full introduction to RasPi you will really think to buy one.&lt;/p&gt;
+
+&lt;p&gt;Raspberry Pi is a small computer which is been designed in &amp;quot;the UK&amp;quot;. I am saying it as computer but actually its a small credit card sized board which has an ARM processor which is a Broadcom SoC (system on chip) which includes a GPU, 512MB RAM, 700MHz ARMv6 CPU.&lt;/p&gt;
+
+&lt;p&gt;Now just think of those endless applications that we can make through RasPi. Though it may have lesser power than a normal PC which may have a 4GB of RAM and some Intel Processor clocked at 2GHz to 3GHz but that is also somewhat costly. But now at that cheaper cost we are getting much more that required. &lt;/p&gt;
+
+&lt;p&gt;ARM. ARM is Advanced RISC Machines firstly developed by Acron Computers. They have just made the Core architechture and they license it to the manufacturers for making the end user or end prototype chip. This is the strategy of Acorn. ARM has different revisions which are known as versions for more information on ARM visit &lt;a href=&quot;http://arm.com&quot;&gt;ARM&lt;/a&gt; or read about it at &lt;a href=&quot;http://en.wikipedia.org/wiki/ARM_architecture&quot;&gt;Wiki.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;One thing that comes with ARM processors is GPIOs commonly known as General Purpose Input/Output. This can be of any number depending upon the SoC&amp;#39;s design. Now for simple applications like home-automation, etc. GPIOs come in handy. This post is for introduction and nothing more but still I will be sharing many details about the RasPi...&lt;/p&gt;
+
+&lt;p&gt;Following is the image of RasPi. How it looks like..&lt;/p&gt;
+
+&lt;div id=&quot;container&quot;&gt;
+&lt;a href=&quot;/images/raspi.jpg&quot;&gt;&lt;img src=&quot;/images/raspi.jpg&quot; alt=&quot;I &lt;3 Raspberry Pi&quot; width=90% /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The next thing we need to know it what includes in the package. This following shows the different components of RasPi. Processor, 2 USB, Power Input (microusb), SDcard Slot (SDcard contains boot.img for booting up the RasPi), Audio Jack, Video out as HDMI and RCA. &lt;/p&gt;
+
+&lt;div id=&quot;container&quot;&gt;
+&lt;a href=&quot;http://www.raspberrypi.org/wp-content/uploads/2011/07/RaspiModelB.png&quot;&gt;&lt;img src=&quot;http://www.raspberrypi.org/wp-content/uploads/2011/07/RaspiModelB.png&quot; width=90% alt=&quot;Raspberry&quot;/&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The basic things you need to start a Raspberry Pi are as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Raspberry Pi, can be bought from &lt;a href=&quot;http://element14.com&quot;&gt;element14&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Power Supply or a simple smartphone charger with current rating greater than 700mA (for model B). &lt;/li&gt;
+&lt;li&gt;SDcard, here its SDHC normal digital camera memory cards. for checking if your sdcard works with Raspi visit &lt;a href=&quot;http://elinux.org/RPi_SD_cards&quot;&gt;elinux.org&lt;/a&gt;(minimum of 4GB is recommended).&lt;/li&gt;
+&lt;li&gt;Ethernet Cable or WiFi USB module (for internet connection).&lt;/li&gt;
+&lt;li&gt;A TV or Monitor with HDMI or RCA input (for Display).&lt;/li&gt;
+&lt;li&gt;A CASE for protection.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This was the basic things you need for setting up Raspi but now if you need to remove some of the components you can just connect to the ethernet and can use it via &lt;a href=&quot;http://en.wikipedia.org/wiki/SSH&quot;&gt;SSH&lt;/a&gt; or &lt;a href=&quot;http://en.wikipedia.org/wiki/Virtual_Network_Computing&quot;&gt;VNC&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Will continue next time with installing an image on SDCard, which can be downloaded from &lt;a href=&quot;http://www.raspberrypi.org/downloads&quot;&gt;RPi_Downloads&lt;/a&gt; and updating via &lt;code&gt;sudo apt-get update &amp;amp;&amp;amp; sudo apt-get upgrade&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;End of Post.&lt;/p&gt;
+</description>
+<pubDate>Thu, 02 Jan 2014 03:11:59 +0530</pubDate>
+<link>http://dtchanpura.github.io//raspi/2014/01/02/introduction-to-raspberry-pi.html</link>
+<guid isPermaLink="true">http://dtchanpura.github.io//raspi/2014/01/02/introduction-to-raspberry-pi.html</guid>
+</item>
+
+<item>
+<title>OpenCV: Shapes - Polygons</title>
+<description>&lt;p&gt;I think I may have said that drawing polygons is quite tough. It is but it can be made easy. Polygons are simply just joining some points. Like in one&amp;#39;s childhood we play that puzzle of joining the dots or points which are been numbered, here also we say OpenCV is that child who just understands counting and we plot those points in 2 dimension plane. So consider this example and learn it in a way if you are making a child learn how to draw...&lt;/p&gt;
+
+&lt;p&gt;The Use.. One may think why to use polygon. Like we can make highlight a portion or Region of Interest by rectangle or circle or even ellipse. So answer that question lets consider a problem of highlighting some part. Lets see the following figure.&lt;/p&gt;
+
+&lt;div id=&quot;container&quot;&gt;
+&lt;a href=&quot;http://www.topnews.in/files/Novel-Face-Recognition-347365.jpg&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;http://www.topnews.in/files/Novel-Face-Recognition-347365.jpg&quot; width=&quot;297&quot; height=&quot;267&quot; /&gt;&lt;/a&gt;&lt;br /&gt; Face Detection/Recognition
+&lt;/div&gt;
+
+&lt;p&gt;So as seen from the figure we get the idea of use of polygons. Like here in face detection we can see the eyes then nose and lips, even eye-brows. this could be matched with the original frame or structure. Again see the following image as all the different shapes or something&lt;/p&gt;
+</description>
+<pubDate>Tue, 17 Dec 2013 05:30:00 +0530</pubDate>
+<link>http://dtchanpura.github.io//2013/12/17/opencv-shapes-3.html</link>
+<guid isPermaLink="true">http://dtchanpura.github.io//2013/12/17/opencv-shapes-3.html</guid>
+</item>
+
+<item>
+<title>OpenCV: Shapes - Rectangles and Ellipses</title>
+<description>&lt;p&gt;A new post! Sorry if I am taking long long very long gaps in between two posts but there are many different academic activities like attending lectures, preparing for exams and finally giving those exams. Enough from my life we should better start with the Rectangle and Ellipse&lt;/p&gt;
+
+&lt;p&gt;For drawing these shapes one should know what they are actually. Rectangle is a square with two pairs of different lengths. As shown :-P.&lt;/p&gt;
+
+&lt;div class=&quot;container&quot;&gt;
+&lt;a href=&quot;http://www.theknockoffeconomy.com/wp-content/uploads/2012/10/rectangle.gif&quot;&gt;&lt;imgs src=&quot;http://www.theknockoffeconomy.com/wp-content/uploads/2012/10/rectangle.gif&quot; width=&quot;420&quot; height=&quot;259&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;So how can we draw it? This is the big question. For that Drawing Functions used are &lt;code&gt;rectangle();&lt;/code&gt; OpenCV allows us to draw a rectangle with just two points here any two opposite points. This will draw the rectangle in these form as shown above. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;void rectangle(img,pt1,pt2,color,thickness=1,lineType=8,shift=0)
+cv2.rectangle(img, pt1, pt2, color[, thickness[, lineType[, shift]]])&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here this &lt;code&gt;pt1&lt;/code&gt; and &lt;code&gt;pt2&lt;/code&gt; are &lt;code&gt;Point&lt;/code&gt; the following code explains all with comments.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;void main()
+{
+  Mat image = Mat::zeros(400, 400, CV_8UC3); 
+  //Creating an Image of size 400x400 8bit x 3layers
+  rectangle(image,Point(100,100),Point(300,200),Scalar(255,255,0),1,8,0);
+  //two points as (100,100) and (300,200) with color Cyan (255,255,0)
+  namedWindow(&quot;Display Image&quot;, CV_WINDOW_AUTOSIZE);
+  imshow(&quot;Display Image&quot;, image);
+  //Displaying the image in a Window named Display Image
+  waitKey(0);
+  //#Required!!
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now explanation goes this way that we are passing the argument as an &lt;code&gt;Mat image&lt;/code&gt; and it gets edited according to the draw a rectangle of size as given by two points. These points are of class &lt;code&gt;Point&lt;/code&gt; which has two values x and y which can be defined as &lt;code&gt;Point(x,y)&lt;/code&gt; its constructor. We have not used any type of variable to store it but we can do it if we want.&lt;/p&gt;
+
+&lt;p&gt;Taking an example of object detection I wanted to draw a rectangle of the size of that object I need atleast two points. These points are coming from the processing of static background and the real-time frame this is quite different and tough though so will discuss it sometime later and coming back to shapes we have made a rectangle in this &lt;code&gt;image&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now I have one question for you all. Why is this (255,255,0) is cyan and not yellow?? If you can answer this its a big accomplishment for me!&lt;/p&gt;
+
+&lt;p&gt;This is the description of various arguments used here (from &lt;a href=&quot;http://docs.opencv.org/modules/core/doc/drawing_functions.html#rectangle&quot;&gt;OpenCV Documentation&lt;/a&gt;)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;img – Image.
+pt1 – Vertex of the rectangle.
+pt2 – Vertex of the rectangle opposite to pt1 .
+rec – Alternative specification of the drawn rectangle.
+color – Rectangle color or brightness (grayscale image).
+thickness – Thickness of lines that make up the rectangle. Negative values, like CV_FILLED , mean that the function has to draw a filled rectangle.
+lineType – Type of the line. See the line() description.
+shift – Number of fractional bits in the point coordinates.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Following is the python code if some on wants to work on it. Its almost the same.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from cv2.cv import * # importing all the opencv libraries
+img=CreateMat(600,600,CV_8UC3) # creating blank image of 400x400 pixels
+Rectangle(img,(img.rows/2,img.cols/3),(img.rows/3,img.cols/2),(255,255,255), 3) 
+ShowImage(&quot;Display&quot;,img) # Displaying the image ... 
+WaitKey(0)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now we come to the second part of the Post &lt;/p&gt;
+
+&lt;h2&gt;Ellipse:&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;void ellipse(Mat img, center, Size axes, double angle, double startAngle, double endAngle, color, thickness=1, lineType=8, shift=0)
+cv2.ellipse(img, center, axes, angle, startAngle, endAngle, color[, thickness[, lineType[, shift]]]) → None&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is just simple if you saw the earlier example of rectangle here we need to understand the arguments&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;Mat img&lt;/code&gt;: it&#39;s the image on which we are desired to draw ellipse.
+&lt;li&gt;&lt;code&gt;Point center&lt;/code&gt;: it is the center of ellipse i.e. the intersection of two axes (Major and Minor)
+&lt;li&gt;&lt;code&gt;Size axes&lt;/code&gt;: this is the size of the ellipse i.e. the major and minor axes length.
+&lt;li&gt;&lt;code&gt;double angle&lt;/code&gt;: its the angle of ellipse with image&#39;s X axis.
+&lt;li&gt;&lt;code&gt;double startAngle, double endAngle &lt;/code&gt;: its the starting and ending position of the ellipse I.e. at which angle to start and at what angle to end.
+&lt;/ol&gt;
+
+&lt;div class=&quot;container&quot;&gt;
+&lt;a href=&quot;http://dtchanpura.files.wordpress.com/2013/11/ellipse.png&quot;&gt;&lt;img src=&quot;http://dtchanpura.files.wordpress.com/2013/11/ellipse.png&quot; width=&quot;435&quot; height=&quot;259&quot;  /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;From the given image everything will be clear that which axis are primary the angle represents the change of angle in the major axis the start and end angle represents the starting and ending points of the ellipse as shown.&lt;/p&gt;
+
+&lt;p&gt;Code is almost the same as just have to put values in place of variables and which will make an Ellipse of your choice.&lt;/p&gt;
+
+&lt;p&gt;End of Post&lt;/p&gt;
+</description>
+<pubDate>Wed, 20 Nov 2013 15:00:50 +0530</pubDate>
+<link>http://dtchanpura.github.io//opencv/2013/11/20/opencv-shapes-2.html</link>
+<guid isPermaLink="true">http://dtchanpura.github.io//opencv/2013/11/20/opencv-shapes-2.html</guid>
+</item>
+
+</channel>
+</rss>
