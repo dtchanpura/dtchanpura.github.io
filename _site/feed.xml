@@ -1,10 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-<title>DCPrime&#39;s Blog</title>
-<description>Darshil Chanpura&#39;s way of explaining stuff he barely knows</description>	
+<title>DCPrime's Blog</title>
+<description>Darshil Chanpura's way of explaining stuff he barely knows</description>	
 <link>http://dtchanpura.github.io/</link>
 <atom:link href="http://dtchanpura.github.io//feed.xml" rel="self" type="application/rss+xml" />
+
+<item>
+<title>Somedays in Chennai</title>
+<description>&lt;h4&gt;Anyone can code...&lt;/h4&gt;
+
+&lt;p&gt;Time just flies like an arrow. Its been four months in Chennai. Most of the time like 6 out of 7 days in front of a computer learning something or the other. There is a big difference between a corporate company employee and a freelancer.They both have their advantages and also some sacrifices to be done.&lt;/p&gt;
+
+&lt;p&gt;I often get that phrase from the movie &lt;a href=&quot;http://www.imdb.com/title/tt0382932/&quot;&gt;Ratatouille&lt;/a&gt; &amp;quot;Food always comes to those who love to cook!&amp;quot;, thinking this would also be applicable to programming. This change and distance from home taught me some of the life lessons apart from many technical things.&lt;/p&gt;
+
+&lt;p&gt;Past couple of months went completing crash course on Java and Java Web Development. This might not be a good time to learn more primitive language like Java being the best third generation language because there are many more advanced languages like Python, Ruby, etc. But it might become more easy to learn the way I learnt. I, being able to work with Raspberry Pi and some basic Python programming was knowing more about programming structure that was used in an Object Oriented Language. So that same thing followed in Java. For example,&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Overridding toString() method in Java&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;variable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Same thing I learnt in OOP in Python&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Same as __str__/__unicode__ method in Python&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__str__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;variable&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;From this experience I got to know anyone can learn any other programming language if one knows atleast one of the type language. This got me to think I can also learn many more concepts rather than just coding. As someone has said &amp;quot;Programming does not start with coding but it starts with a careful design.&amp;quot; That was the next part of my lessons.&lt;/p&gt;
+
+&lt;h4&gt;Careful Designs&lt;/h4&gt;
+
+&lt;p&gt;Anyone can learn programming language but its not that easy to implement any piece of code without a good design. The design needs experience in programming irrelevant of programming language. Like the design patterns matter depending upon the project requirements. The word &amp;quot;Design&amp;quot; was described entirely during the training.&lt;/p&gt;
+
+&lt;p&gt;Even my friends from the CSE and IT streams got to know about it here with me.&lt;/p&gt;
+
+&lt;p&gt;There are many common things as well in between the corporate companies and open source organizations such as, the projects are collaborative but one is forcefully assigned to someone and other is like attraction of person&amp;#39;s interests towards the project.&lt;/p&gt;
+
+&lt;p&gt;There is so much to learn in this world which is only in the field been called Computing...&lt;/p&gt;
+</description>
+<pubDate>Sun, 01 Feb 2015 05:40:00 +0530</pubDate>
+<link>http://dtchanpura.github.io//technology/2015/02/01/somedays-in-chennai.html</link>
+<guid isPermaLink="true">http://dtchanpura.github.io//technology/2015/02/01/somedays-in-chennai.html</guid>
+</item>
+
+<item>
+<title>Power of ATTiny with Arduino.</title>
+<description>&lt;p&gt;After the dusk there comes dawn and same way an Electronics engineer who works a lot away from field needs to visit it sometime...&lt;/p&gt;
+
+&lt;p&gt;In some way I came back few days to  when I came in touch with &amp;quot;Makers&amp;quot; nearby who were really great working with Arduino and similar things at FabLab in CEPT Campus.&lt;/p&gt;
+
+&lt;p&gt;I did knew about ATtiny way back but never shed light on that, as mainly being busy in learning OpenCV and now had much time so working on it.&lt;/p&gt;
+
+&lt;p&gt;ATtiny is the smallest member of Atmel&amp;#39;s AVR family and yet more powerful. Lets see how it goes while programming it using Arduino.&lt;/p&gt;
+
+&lt;p&gt;Now think ATtiny as an Arduino as it does have on-chip 4-channel 10-bit ADC with all 6 pins working with Digital I/O multiplexed with ADC and Serial Peripheral Interface (SPI)&lt;/p&gt;
+</description>
+<pubDate>Tue, 26 Aug 2014 23:40:00 +0530</pubDate>
+<link>http://dtchanpura.github.io//arduino/2014/08/26/back-to-hardware.html</link>
+<guid isPermaLink="true">http://dtchanpura.github.io//arduino/2014/08/26/back-to-hardware.html</guid>
+</item>
 
 <item>
 <title>Experiments with Django continues..</title>
@@ -122,7 +175,7 @@ The Quick Brown Fox Jumps over a.&quot;)
         &quot;&quot;&quot; Send string to LCD. Newline wraps to second line&quot;&quot;&quot;
 
         for char in text:
-            if char == &#39;\n&#39;:
+            if char == '\n':
                 self.write4bits(0xC0) # next line
             else:
                 self.write4bits(ord(char),True)
@@ -148,7 +201,7 @@ eason
 
 &lt;p&gt;For this we will divide the string into mainly 4 different parts as we can see in above tweet its 3 parts. So to divide we will split the string with 16 characters at once which are then repeated in another list as shown below.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;[&#39;#DCPrimeRPi Twee&#39;,&#39;ting with this ha&#39;,&#39;sh tag for some r&#39;,&#39;eason&#39;]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;['#DCPrimeRPi Twee','ting with this ha','sh tag for some r','eason']&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This will show us that use only two lines or four lines at once. There are many people who are using 4 line LCDs and I was one of them I started debugging and editting the code so that I can show the whole 160 characters in some scroll effect without missing any line.&lt;/p&gt;
 
@@ -157,11 +210,11 @@ eason
 def longmessage(self, text):
   # text=str(text)
   if len(text)&lt;80:
-    text=text+&#39; &#39;\*(80-len(text))
+    text=text+' '\*(80-len(text))
     li=0
     for char in text:
-      if char==&#39;\n&#39;:
-        text = text[:li] + &#39; &#39; + text[li+1:]
+      if char=='\n':
+        text = text[:li] + ' ' + text[li+1:]
         li+=1
         text1=self.splitnumv2(4, self.splitnum(20,text))
         print text1
@@ -172,7 +225,7 @@ def longmessage(self, text):
           l=0
           \# self.clear()
           for line in screen:
-            line=line+&#39; &#39;\*(20-len(line))
+            line=line+' '\*(20-len(line))
             for char in line:
               l+=1
               self.write4bits(ord(char),True)
@@ -312,7 +365,7 @@ git clone http://github.com/dtchanpura/DCPrimeRPi.git -b CLCD&lt;/code&gt;&lt;/p
 
 &lt;p&gt;So for small applications like interfacing LEDs or some LCD related projects you can use this. But if you are planning some big things like interfacing Keypad, TouchScreen, etc. you may need an Arduino Interfaced with Raspi.&lt;/p&gt;
 
-&lt;p&gt;Now we talked enough about this GPIO we can implement this using &lt;a title=&quot;That&#39;s Right&quot;&gt;Python&lt;/a&gt;. But the question is HOW!!. &lt;/p&gt;
+&lt;p&gt;Now we talked enough about this GPIO we can implement this using &lt;a title=&quot;That's Right&quot;&gt;Python&lt;/a&gt;. But the question is HOW!!. &lt;/p&gt;
 
 &lt;p&gt;The answer is we can use this GPIOs to be used as Input/Output which is defined by importing the module named &lt;code&gt;RPi.GPIO&lt;/code&gt;&lt;/p&gt;
 
@@ -390,9 +443,9 @@ def main():                     #MAIN Function
     import RPi.GPIO as GPIO
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(23,GPIO.OUT)
-    if argmnt.upper() == &quot;ON&quot; or argmnt == &#39;1&#39;:
+    if argmnt.upper() == &quot;ON&quot; or argmnt == '1':
         GPIO.output(23,True)
-    elif argmnt.upper() == &quot;OFF&quot; or argmnt == &#39;0&#39;:
+    elif argmnt.upper() == &quot;OFF&quot; or argmnt == '0':
         GPIO.output(23,False)
     else:
         for i in range(0,10):   
@@ -402,7 +455,7 @@ def main():                     #MAIN Function
             sleep(1)
 
 
-if __name__== &#39;__main__&#39;:
+if __name__== '__main__':
     main()
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -416,7 +469,7 @@ if __name__== &#39;__main__&#39;:
 </item>
 
 <item>
-<title>Thoughts about Mozilla&#39;s Aurora and its new Sync</title>
+<title>Thoughts about Mozilla's Aurora and its new Sync</title>
 <description>&lt;p&gt;Well I came across a blog post from Mozilla writing about its improved sync features and a new pre-Beta testing version browser &amp;quot;Aurora&amp;quot; for their developers. The best thing about Mozilla is its openness and they have mentioned it at many places. Still by this there aren&amp;#39;t many who are using Firefox lately, its because Chromium, or let&amp;#39;s say Google Chrome. &lt;/p&gt;
 
 &lt;p&gt;The main reason behind this was usability. Comparing Firefox with Chrome I had a better experience with chrome because of faster or speedier than Firefox. But I after some usage got to know it has been taking up so much memory and some privacy issues I really don&amp;#39;t care about both but still what if you want any of them.&lt;/p&gt;
@@ -535,69 +588,6 @@ If the purpose is to convert TV into a smart TV or want to watch some movies and
 <pubDate>Sat, 08 Feb 2014 06:11:59 +0530</pubDate>
 <link>http://dtchanpura.github.io//raspi/2014/02/08/things-to-do-after-getting-a-raspberry-pi.html</link>
 <guid isPermaLink="true">http://dtchanpura.github.io//raspi/2014/02/08/things-to-do-after-getting-a-raspberry-pi.html</guid>
-</item>
-
-<item>
-<title>Introduction to Raspberry Pi</title>
-<description>&lt;p&gt;Firstly I wish you a very Happy New year. This year I was thinking of taking a new year resolution as to write at least one post every week. I know that&amp;#39;s quite tough for me but will try my level best. I am very happy to announce that I just received a Raspberry Pi (RasPi, aliased). Raspberry Pi is a small computer which is having a powerful processor clocked at 700MHz and a 512MB of RAM. This might be too technical but believe me when you get the full introduction to RasPi you will really think to buy one.&lt;/p&gt;
-
-&lt;p&gt;Raspberry Pi is a small computer which is been designed in &amp;quot;the UK&amp;quot;. I am saying it as computer but actually its a small credit card sized board which has an ARM processor which is a Broadcom SoC (system on chip) which includes a GPU, 512MB RAM, 700MHz ARMv6 CPU.&lt;/p&gt;
-
-&lt;p&gt;Now just think of those endless applications that we can make through RasPi. Though it may have lesser power than a normal PC which may have a 4GB of RAM and some Intel Processor clocked at 2GHz to 3GHz but that is also somewhat costly. But now at that cheaper cost we are getting much more that required. &lt;/p&gt;
-
-&lt;p&gt;ARM. ARM is Advanced RISC Machines firstly developed by Acron Computers. They have just made the Core architechture and they license it to the manufacturers for making the end user or end prototype chip. This is the strategy of Acorn. ARM has different revisions which are known as versions for more information on ARM visit &lt;a href=&quot;http://arm.com&quot;&gt;ARM&lt;/a&gt; or read about it at &lt;a href=&quot;http://en.wikipedia.org/wiki/ARM_architecture&quot;&gt;Wiki.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;One thing that comes with ARM processors is GPIOs commonly known as General Purpose Input/Output. This can be of any number depending upon the SoC&amp;#39;s design. Now for simple applications like home-automation, etc. GPIOs come in handy. This post is for introduction and nothing more but still I will be sharing many details about the RasPi...&lt;/p&gt;
-
-&lt;p&gt;Following is the image of RasPi. How it looks like..&lt;/p&gt;
-
-&lt;div id=&quot;container&quot;&gt;
-&lt;a href=&quot;/images/raspi.jpg&quot;&gt;&lt;img src=&quot;/images/raspi.jpg&quot; alt=&quot;I &lt;3 Raspberry Pi&quot; width=90% /&gt;&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The next thing we need to know it what includes in the package. This following shows the different components of RasPi. Processor, 2 USB, Power Input (microusb), SDcard Slot (SDcard contains boot.img for booting up the RasPi), Audio Jack, Video out as HDMI and RCA. &lt;/p&gt;
-
-&lt;div id=&quot;container&quot;&gt;
-&lt;a href=&quot;http://www.raspberrypi.org/wp-content/uploads/2011/07/RaspiModelB.png&quot;&gt;&lt;img src=&quot;http://www.raspberrypi.org/wp-content/uploads/2011/07/RaspiModelB.png&quot; width=90% alt=&quot;Raspberry&quot;/&gt;&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The basic things you need to start a Raspberry Pi are as follows:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Raspberry Pi, can be bought from &lt;a href=&quot;http://element14.com&quot;&gt;element14&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Power Supply or a simple smartphone charger with current rating greater than 700mA (for model B). &lt;/li&gt;
-&lt;li&gt;SDcard, here its SDHC normal digital camera memory cards. for checking if your sdcard works with Raspi visit &lt;a href=&quot;http://elinux.org/RPi_SD_cards&quot;&gt;elinux.org&lt;/a&gt;(minimum of 4GB is recommended).&lt;/li&gt;
-&lt;li&gt;Ethernet Cable or WiFi USB module (for internet connection).&lt;/li&gt;
-&lt;li&gt;A TV or Monitor with HDMI or RCA input (for Display).&lt;/li&gt;
-&lt;li&gt;A CASE for protection.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This was the basic things you need for setting up Raspi but now if you need to remove some of the components you can just connect to the ethernet and can use it via &lt;a href=&quot;http://en.wikipedia.org/wiki/SSH&quot;&gt;SSH&lt;/a&gt; or &lt;a href=&quot;http://en.wikipedia.org/wiki/Virtual_Network_Computing&quot;&gt;VNC&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Will continue next time with installing an image on SDCard, which can be downloaded from &lt;a href=&quot;http://www.raspberrypi.org/downloads&quot;&gt;RPi_Downloads&lt;/a&gt; and updating via &lt;code&gt;sudo apt-get update &amp;amp;&amp;amp; sudo apt-get upgrade&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;End of Post.&lt;/p&gt;
-</description>
-<pubDate>Thu, 02 Jan 2014 03:11:59 +0530</pubDate>
-<link>http://dtchanpura.github.io//raspi/2014/01/02/introduction-to-raspberry-pi.html</link>
-<guid isPermaLink="true">http://dtchanpura.github.io//raspi/2014/01/02/introduction-to-raspberry-pi.html</guid>
-</item>
-
-<item>
-<title>OpenCV: Shapes - Polygons</title>
-<description>&lt;p&gt;I think I may have said that drawing polygons is quite tough. It is but it can be made easy. Polygons are simply just joining some points. Like in one&amp;#39;s childhood we play that puzzle of joining the dots or points which are been numbered, here also we say OpenCV is that child who just understands counting and we plot those points in 2 dimension plane. So consider this example and learn it in a way if you are making a child learn how to draw...&lt;/p&gt;
-
-&lt;p&gt;The Use.. One may think why to use polygon. Like we can make highlight a portion or Region of Interest by rectangle or circle or even ellipse. So answer that question lets consider a problem of highlighting some part. Lets see the following figure.&lt;/p&gt;
-
-&lt;div id=&quot;container&quot;&gt;
-&lt;a href=&quot;http://www.topnews.in/files/Novel-Face-Recognition-347365.jpg&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;http://www.topnews.in/files/Novel-Face-Recognition-347365.jpg&quot; width=&quot;297&quot; height=&quot;267&quot; /&gt;&lt;/a&gt;&lt;br /&gt; Face Detection/Recognition
-&lt;/div&gt;
-
-&lt;p&gt;So as seen from the figure we get the idea of use of polygons. Like here in face detection we can see the eyes then nose and lips, even eye-brows. this could be matched with the original frame or structure. Again see the following image as all the different shapes or something&lt;/p&gt;
-</description>
-<pubDate>Tue, 17 Dec 2013 05:30:00 +0530</pubDate>
-<link>http://dtchanpura.github.io//2013/12/17/opencv-shapes-3.html</link>
-<guid isPermaLink="true">http://dtchanpura.github.io//2013/12/17/opencv-shapes-3.html</guid>
 </item>
 
 </channel>
