@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-<title>DCPrime's Blog</title>
-<description>Darshil Chanpura's way of explaining stuff he barely knows</description>	
+<title>DCPrime&#39;s Blog</title>
+<description>Darshil Chanpura&#39;s way of explaining stuff he barely knows</description>	
 <link>http://dtchanpura.github.io/</link>
 <atom:link href="http://dtchanpura.github.io//feed.xml" rel="self" type="application/rss+xml" />
 
@@ -202,7 +202,7 @@ The Quick Brown Fox Jumps over a.&quot;)
         &quot;&quot;&quot; Send string to LCD. Newline wraps to second line&quot;&quot;&quot;
 
         for char in text:
-            if char == '\n':
+            if char == &#39;\n&#39;:
                 self.write4bits(0xC0) # next line
             else:
                 self.write4bits(ord(char),True)
@@ -228,7 +228,7 @@ eason
 
 &lt;p&gt;For this we will divide the string into mainly 4 different parts as we can see in above tweet its 3 parts. So to divide we will split the string with 16 characters at once which are then repeated in another list as shown below.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;['#DCPrimeRPi Twee','ting with this ha','sh tag for some r','eason']&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;#DCPrimeRPi Twee&#39;,&#39;ting with this ha&#39;,&#39;sh tag for some r&#39;,&#39;eason&#39;]&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This will show us that use only two lines or four lines at once. There are many people who are using 4 line LCDs and I was one of them I started debugging and editting the code so that I can show the whole 160 characters in some scroll effect without missing any line.&lt;/p&gt;
 
@@ -237,11 +237,11 @@ eason
 def longmessage(self, text):
   # text=str(text)
   if len(text)&lt;80:
-    text=text+' '\*(80-len(text))
+    text=text+&#39; &#39;\*(80-len(text))
     li=0
     for char in text:
-      if char=='\n':
-        text = text[:li] + ' ' + text[li+1:]
+      if char==&#39;\n&#39;:
+        text = text[:li] + &#39; &#39; + text[li+1:]
         li+=1
         text1=self.splitnumv2(4, self.splitnum(20,text))
         print text1
@@ -252,7 +252,7 @@ def longmessage(self, text):
           l=0
           \# self.clear()
           for line in screen:
-            line=line+' '\*(20-len(line))
+            line=line+&#39; &#39;\*(20-len(line))
             for char in line:
               l+=1
               self.write4bits(ord(char),True)
@@ -392,7 +392,7 @@ git clone http://github.com/dtchanpura/DCPrimeRPi.git -b CLCD&lt;/code&gt;&lt;/p
 
 &lt;p&gt;So for small applications like interfacing LEDs or some LCD related projects you can use this. But if you are planning some big things like interfacing Keypad, TouchScreen, etc. you may need an Arduino Interfaced with Raspi.&lt;/p&gt;
 
-&lt;p&gt;Now we talked enough about this GPIO we can implement this using &lt;a title=&quot;That's Right&quot;&gt;Python&lt;/a&gt;. But the question is HOW!!. &lt;/p&gt;
+&lt;p&gt;Now we talked enough about this GPIO we can implement this using &lt;a title=&quot;That&#39;s Right&quot;&gt;Python&lt;/a&gt;. But the question is HOW!!. &lt;/p&gt;
 
 &lt;p&gt;The answer is we can use this GPIOs to be used as Input/Output which is defined by importing the module named &lt;code&gt;RPi.GPIO&lt;/code&gt;&lt;/p&gt;
 
@@ -470,9 +470,9 @@ def main():                     #MAIN Function
     import RPi.GPIO as GPIO
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(23,GPIO.OUT)
-    if argmnt.upper() == &quot;ON&quot; or argmnt == '1':
+    if argmnt.upper() == &quot;ON&quot; or argmnt == &#39;1&#39;:
         GPIO.output(23,True)
-    elif argmnt.upper() == &quot;OFF&quot; or argmnt == '0':
+    elif argmnt.upper() == &quot;OFF&quot; or argmnt == &#39;0&#39;:
         GPIO.output(23,False)
     else:
         for i in range(0,10):   
@@ -482,7 +482,7 @@ def main():                     #MAIN Function
             sleep(1)
 
 
-if __name__== '__main__':
+if __name__== &#39;__main__&#39;:
     main()
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -496,7 +496,7 @@ if __name__== '__main__':
 </item>
 
 <item>
-<title>Thoughts about Mozilla's Aurora and its new Sync</title>
+<title>Thoughts about Mozilla&#39;s Aurora and its new Sync</title>
 <description>&lt;p&gt;Well I came across a blog post from Mozilla writing about its improved sync features and a new pre-Beta testing version browser &amp;quot;Aurora&amp;quot; for their developers. The best thing about Mozilla is its openness and they have mentioned it at many places. Still by this there aren&amp;#39;t many who are using Firefox lately, its because Chromium, or let&amp;#39;s say Google Chrome. &lt;/p&gt;
 
 &lt;p&gt;The main reason behind this was usability. Comparing Firefox with Chrome I had a better experience with chrome because of faster or speedier than Firefox. But I after some usage got to know it has been taking up so much memory and some privacy issues I really don&amp;#39;t care about both but still what if you want any of them.&lt;/p&gt;

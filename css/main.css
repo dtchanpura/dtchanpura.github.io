@@ -323,6 +323,13 @@ Editted CSS
 	font-family: 'Ropa Sans';
 }
 
+.projects dl dt{
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.projects dl dd{
+  font-size: 0.8rem;
+}
 
 /* For Mobile Viewing..********************************************************/
 @media screen and (min-width: 480px) {
