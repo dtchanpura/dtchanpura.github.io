@@ -23,7 +23,9 @@ As seen the LCD is interfaced and it will be able to show what we want. Now come
 Code is quite simple as for start to display something we just need a place where we can give the variable name of a string. So following is hello world code for a LCD display. (Cloned from my Repo DCPrimeRPi)
 
 ###CODE:
-<pre><code>#!/usr/bin/env python
+
+```python
+#!/usr/bin/env python
 
 from lcdDisplay import lcdDisplay
 lcd = lcdDisplay() #Object named lcd for
@@ -33,19 +35,19 @@ lcd.begin(20,3)
 
 lcd.clear()
 i=0
-lcd.longmessage("The Quick Brown
-Fox Jumps over a Lazy Dog.The Quick
-Brown Fox Jumps over a Lazy Dog.The
-Quick Brown Fox Jumps over a Lazy Dog.
+lcd.longmessage("The Quick Brown\
+Fox Jumps over a Lazy Dog.The Quick\
+Brown Fox Jumps over a Lazy Dog.The\
+Quick Brown Fox Jumps over a Lazy Dog.\
 The Quick Brown Fox Jumps over a.")
-</code>
-</pre>
+```
 
 So here we can see I have used only around 160 characters (Limit of Tweet.) and it does display it better but the well known types of LCDs are having only 16x2 = 32 characters. So how to show.. is a big question here.
 
-To show more characters I looked upon and thought how in a movie the end-titles are shown. "One by One." That has been used here. Now to do so I have made a new function (the change in Adafruit's Module) now this needs to go deep. Like we have to see how is the display function made. Now lets have a look on the display function which is <code>lcd.message()</code>
+To show more characters I looked upon and thought how in a movie the end-titles are shown. "One by One." That has been used here. Now to do so I have made a new function (the change in Adafruit's Module) now this needs to go deep. Like we have to see how is the display function made. Now lets have a look on the display function which is `lcd.message()`
 
-<pre><code> def message(self, text):
+```python
+def message(self, text):
         """ Send string to LCD. Newline wraps to second line"""
 
         for char in text:
@@ -54,35 +56,36 @@ To show more characters I looked upon and thought how in a movie the end-titles 
             else:
                 self.write4bits(ord(char),True)
 
-
-</code></pre>
+```
 
 This code has a Defect like it just displays the static text or some dynamic test limited to 32 characters but ours is quite more. Like <i>@dtchanpura: #DCPrimeRPi Tweeting with this hash tag for some reason</i> Considering this for making it fit in 32 characters we need to split it in blocks of 32. But in such a way that there's a repetition from change in screen. Like as follows:
 
-<pre><code>@dtchanpura:
+```
+@dtchanpura:
 \#DCPrimeRPi Twee
-</code></pre>
-
-<pre><code>\#DCPrimeRPi Twee
+```
+```
+\#DCPrimeRPi Twee
 ting with this ha
-</code></pre>
-
-<pre><code>sh tag for some r
+```
+```
+sh tag for some r
 eason
-</code></pre>
+```
 
-So to do so we need to modify the program a bit (or a lot). So i have added a new function which is just for displaying the long messages and the function is named <code>longmessage()</code>
+So to do so we need to modify the program a bit (or a lot). So i have added a new function which is just for displaying the long messages and the function is named `longmessage()`
 
 For this we will divide the string into mainly 4 different parts as we can see in above tweet its 3 parts. So to divide we will split the string with 16 characters at once which are then repeated in another list as shown below.
 
-<pre><code>['#DCPrimeRPi Twee','ting with this ha','sh tag for some r','eason']</code></pre>
+```['#DCPrimeRPi Twee','ting with this ha','sh tag for some r','eason']```
 
 This will show us that use only two lines or four lines at once. There are many people who are using 4 line LCDs and I was one of them I started debugging and editting the code so that I can show the whole 160 characters in some scroll effect without missing any line.
 
 The change is shown below.
-<pre><code>
+
+```python
 def longmessage(self, text):
-  \# text=str(text)
+  # text=str(text)
   if len(text)<80:
     text=text+' '\*(80-len(text))
     li=0
@@ -99,18 +102,18 @@ def longmessage(self, text):
           l=0
           \# self.clear()
           for line in screen:
-            line=line+' '\*(20-len(line))
+            line=line + ' ' * (20-len(line))
             for char in line:
               l+=1
               self.write4bits(ord(char),True)
               if l==20:
-                self.write4bits(self.LCD_LINE2) \# 2nd line
+                self.write4bits(self.LCD_LINE2) # 2nd line
               elif l==40:
-                self.write4bits(self.LCD_LINE3) \# 3rd line \# changed
+                self.write4bits(self.LCD_LINE3) # 3rd line # changed
               elif l==60:
-                self.write4bits(self.LCD_LINE4) \# 4th line \#changed
+                self.write4bits(self.LCD_LINE4) # 4th line #changed
           sleep(4)
-</code></pre>
+```
 
 This code has just one change it will be making a group of four and then removing one from start and append new line at the end. In this way we call this group of four lines a screen and this screen stays for 4 secs as mentioned in the last line of the code.
 
@@ -118,17 +121,19 @@ This code has just one change it will be making a group of four and then removin
 
 The half part was done for displaying but what to display? Twitter is useful and also well known for the short messages that are broadcast so we here will be using that API given by Twitter and ported to Python by the name Twython.
 
-To use it we just need a Twitter account and some application which you can easily get from <a href="https://apps.twitter.com/app/new">http://apps.twitter.com</a>.
+To use it we just need a Twitter account and some application which you can easily get from [http://apps.twitter.com](https://apps.twitter.com/app/new).
 
 ###Installing Twython on Raspi:
 
 For installing we need to install the <code>python-setuptools</code> like <code>pip</code> to do so we just type in the following commands. So by using <code>pip</code> we install the whole API of Twitter which has been already ported to Python.
 
-<pre><code>sudo apt-get update
+```sh
+sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install python-setuptools
 sudo easy_install pip
-sudo pip install twython</code></pre>
+sudo pip install twython
+```
 
 ###Registering Twitter Application:
 
@@ -141,12 +146,13 @@ Now after creating the app you will see the authentication keys or access tokens
 
 After installing twython and creating an app we need to add our code to Pi.
 
-<pre><code>mkdir TweetMon && cd TweetMon
-git clone http://github.com/dtchanpura/DCPrimeRPi.git -b CLCD</code></pre>
+```sh
+mkdir TweetMon && cd TweetMon
+git clone http://github.com/dtchanpura/DCPrimeRPi.git -b CLCD
+```
+This repository has all the prerequisites for this project. The thing needed to add in it is the access codes so for that create a new file with path in the directory `DCPrimeRPi/CLCD_python/twitter_keys.py`
 
-This repository has all the prerequisites for this project. The thing needed to add in it is the access codes so for that create a new file with path in the directory <code>DCPrimeRPi/CLCD\_python/twitter\_keys.py</code>
-
-Now its all done the code has the comments and is self explanatory. It does search for a hashtag which uses the command api.search and then returns the values to lcd.longMessage().
+Now its all done the code has the comments and is self explanatory. It does search for a hashtag which uses the command api.search and then returns the values to `lcd.longMessage()`.
 
 So at the end it may look like this...
 
