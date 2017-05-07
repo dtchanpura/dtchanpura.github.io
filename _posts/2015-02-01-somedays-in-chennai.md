@@ -3,12 +3,12 @@ layout: post
 title: "Somedays in Chennai"
 date: 2015-02-01 00:10:00
 categories: technology
-status: beta
+status: published
 description: "This post is all about what I have learned here in chennai and how it changed the way I used to do programming."
 display: true
 ---
 
-####Anyone can code...
+## Anyone can code...
 
 Time just flies like an arrow. Its been four months in Chennai. Most of the time like 6 out of 7 days in front of a computer learning something or the other. There is a big difference between a corporate company employee and a freelancer.They both have their advantages and also some sacrifices to be done.
 
@@ -33,7 +33,7 @@ def __str__(self):
 From this experience I got to know anyone can learn any other programming language if one knows atleast one of the type language. This got me to think I can also learn many more concepts rather than just coding. As someone has said "Programming does not start with coding but it starts with a careful design." That was the next part of my lessons.
 
 
-####Careful Designs
+## Careful Designs
 
 Anyone can learn programming language but its not that easy to implement any piece of code without a good design. The design needs experience in programming irrelevant of programming language. Like the design patterns matter depending upon the project requirements. The word "Design" was described entirely during the training.
 
