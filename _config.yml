@@ -1,4 +1,4 @@
 name: DCPrime's Blog
-markdown: redcarpet
-description: Darshil Chanpura's way of explaining stuff he barely knows
-url: http://dtchanpura.github.io/
+markdown: kramdown
+description: a geek who is into many things related to many different platforms
+url: http://dcpri.me/
