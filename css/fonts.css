@@ -1,10 +1,9 @@
 /* Webfont: Lato-Regular */
 @font-face {
     font-family: 'Lato';
-    src: url('../fonts/Lato-Regular.ttf') format('truetype'),
-         /*url('../fonts/Lato-Regular.eot'),*/
-         url('../fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'),
+    src: url('../fonts/Lato-Regular.woff2') format('woff2'),
          url('../fonts/Lato-Regular.woff') format('woff'),
+         url('../fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'),
          url('../fonts/Lato-Regular.ttf') format('truetype');
     font-style: normal;
     font-weight: normal;
@@ -13,10 +12,9 @@
 /* Webfont: Lato-Bold */
 @font-face {
     font-family: 'Lato';
-    src: url('../fonts/Lato-Bold.ttf') format('truetype'),
-         /*url('../fonts/Lato-Bold.eot'),*/
-         url('../fonts/Lato-Bold.eot?#iefix') format('embedded-opentype'),
+    src: url('../fonts/Lato-Bold.woff2') format('woff2'),
          url('../fonts/Lato-Bold.woff') format('woff'),
+         url('../fonts/Lato-Bold.eot?#iefix') format('embedded-opentype'),
          url('../fonts/Lato-Bold.ttf') format('truetype');
     font-style: normal;
     font-weight: bold;
