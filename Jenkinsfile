@@ -3,12 +3,13 @@ pipeline {
   stages {
     stage('environment') {
       steps {
-        sh 'cd $WORKSPACE && bundle install'
+        sh 'gem install jekyll'
       }
     }
     stage('build') {
       steps {
-        sh 'jekyll --src $WORKSPACE build'
+        sh '''
+$HOME/.gem/ruby/2.4.0/bin/jekyll --src $WORKSPACE build'''
       }
     }
   }
