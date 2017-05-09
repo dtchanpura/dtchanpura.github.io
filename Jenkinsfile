@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('environment') {
       steps {
-        sh 'gem install jekyll'
+        sh 'gem install jekyll bundler bundle'
       }
     }
     stage('build') {
