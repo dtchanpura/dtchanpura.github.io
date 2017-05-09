@@ -9,7 +9,7 @@ pipeline {
     stage('build') {
       steps {
         sh '''
-$HOME/.gem/ruby/2.4.0/bin/jekyll --src $WORKSPACE build'''
+$HOME/.gem/ruby/2.4.0/bin/jekyll -s $WORKSPACE -d /usr/share/webapps/blog build'''
       }
     }
   }
