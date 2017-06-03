@@ -8,7 +8,7 @@ description: "For any application or using any low voltage peripherals like some
 display: true
 ---
 
-##GPIOs:
+## GPIOs:
 
 GPIO is an ancronym for General Purpose Input Output. GPIO is mainly been named for ARM architectural input output pins. Now for using these pins on ARM processor is quite tough as there are many usage of single pin for many different purposes. For example, usage of ALE signal for separating Address and Data from the same multiplexed Address and Data Bus in many general purpose processors like 8085,x86, etc.
 
@@ -36,7 +36,7 @@ So for any application you will make a Python File (with extension <code>.py</co
 
 Let's use for simple LED example. To know how a RPi.GPIO module works
 
-###Step 1:
+### Step 1:
 
 Update and Upgrade the system:
 
@@ -46,7 +46,7 @@ For best results I recommend using Raspbian (Debian Variant) so just type-in fol
 sudo apt-get upgrade</code></pre>
 
 
-###Step 2:
+### Step 2:
 
 After upgrading check the version of RPi.GPIO installed on Raspi. To do the same open Python as root and import it and type in GPIO.version
 
@@ -56,7 +56,7 @@ GPIO.VERSION</code></pre>
 
 Version should be around 0.5.4.
 
-###Step 3:
+### Step 3:
 
 If every thing is good try to make a file named <code>newfile.py</code> to do so we will make a new file.
 
@@ -72,7 +72,7 @@ Editor will open up type in following commands for importing GPIO module.
 
 This will let us to use <code>setmode</code> and <code>setup</code> functions of GPIO.
 
-###Step 4:
+### Step 4:
 
 Now we will move forward for defining a GPIO pin as input or output and also which numbering system to use for accessing the pins.
 
@@ -88,7 +88,7 @@ So now this code says you have declared the Pin 23 as Output and as we have conn
 Now lets say when we execute the python script with argument "ON" like <code>python newfile.py ON</code>
 
 
-###Step 5:
+### Step 5:
 
 After Setting up we need to do execution i.e. the function as a script. 
 
