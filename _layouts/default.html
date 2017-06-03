@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width">
     {% if page %}
       <meta name="blog:title" content="{{page.title}}">
-      <meta name="blog:author" content="{{page.author | default: Darshil Chanpura }}">
+      <meta name="blog:author" content="{{page.author | default: 'Darshil Chanpura' }}">
       <meta name="blog:published_date" content="{{ page.date | default: 0 | date_to_xmlschema  }}">
     {% endif %}
     <link href='/feed.xml' rel='alternate' type='application/rss+xml'>
