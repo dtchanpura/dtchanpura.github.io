@@ -6,7 +6,9 @@
     <title>{{ page.title }} - {{site.name}} </title>
     <meta name="viewport" content="width=device-width">
     <meta name="blog:title" content="{{page.title}}">
-    <meta name="blog:published_date" content="{{page.date | date_to_xmlschema}}">
+    {% if page %}
+    <meta name="blog:published_date" content="{{ page.date | default: 0 | date_to_xmlschema  }}">
+    {% endif %}
     <link href='/feed.xml' rel='alternate' type='application/rss+xml'>
     <meta name="description" content="Hello everyone! I am Darshil
     Chanpura, a geek who is into many things related to many different
