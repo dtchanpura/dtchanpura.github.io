@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{{ page.title }} - {{site.name}} </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="blog:title" content="{{page.title}}">
     {% if page %}
-    <meta name="blog:published_date" content="{{ page.date | default: 0 | date_to_xmlschema  }}">
+      <meta name="blog:title" content="{{page.title}}">
+      <meta name="blog:author" content="{{page.author | default: Darshil Chanpura }}">
+      <meta name="blog:published_date" content="{{ page.date | default: 0 | date_to_xmlschema  }}">
     {% endif %}
     <link href='/feed.xml' rel='alternate' type='application/rss+xml'>
     <meta name="description" content="Hello everyone! I am Darshil
