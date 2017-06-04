@@ -42,17 +42,21 @@ Update and Upgrade the system:
 
 For best results I recommend using Raspbian (Debian Variant) so just type-in following commands.
 
-<pre><code>sudo apt-get update
-sudo apt-get upgrade</code></pre>
+```sh
+sudo apt-get update
+sudo apt-get upgrade
+```
 
 
 ### Step 2:
 
 After upgrading check the version of RPi.GPIO installed on Raspi. To do the same open Python as root and import it and type in GPIO.version
 
-<pre><code>sudo python
+```sh
+sudo python
 import RPi.GPIO as GPIO
-GPIO.VERSION</code></pre>
+GPIO.VERSION
+```
 
 Version should be around 0.5.4.
 
@@ -81,7 +85,8 @@ GPIO.setup(23, GPIO.OUT)
 </code></pre>
 
 Consider that you have connected the LED(+ve) to pin 23 and other to ground through <b>470&Omega;</b> resistor
-<div id="container"><img src="/images/LED_23.png" width=75% /></div>
+
+<img src="/images/LED_23.png" width="75%" >
 
 So now this code says you have declared the Pin 23 as Output and as we have connected the LED to pin 23. This is just the declaration part now we need to make use of it.
 
