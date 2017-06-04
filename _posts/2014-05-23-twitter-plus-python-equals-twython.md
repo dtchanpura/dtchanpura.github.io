@@ -10,11 +10,11 @@ display: true
 
 In earlier post we discussed about GPIOs and now we will use them with interfacing LCD of 16x2 (I am using 20x4) for displaying Tweets of some #hashtag (#DCPrimeRPi) or @someuser (@dtchanpura) on LCD. I am using a module named Twython which I came across while searching for a tweetbot. Well I did find a Tweeting Bot but never made that on my Raspberry Pi just reinvented and made a small display to show the thoughts about it.
 
-<div id="container"><img src="/images/tweet_on_lcd.jpg" /></div>
+<img src="/images/tweet_on_lcd.jpg" width="100%" />
 
 This post will take you to the a way how you can use two different modules and make use of both at once.
 
-##LCD:
+## LCD:
 
 For interfacing LCD with Raspberry Pi we have connected it the following manner.
 
@@ -22,7 +22,7 @@ As seen the LCD is interfaced and it will be able to show what we want. Now come
 
 Code is quite simple as for start to display something we just need a place where we can give the variable name of a string. So following is hello world code for a LCD display. (Cloned from my Repo DCPrimeRPi)
 
-###CODE:
+### CODE:
 
 ```python
 #!/usr/bin/env python
@@ -117,15 +117,15 @@ def longmessage(self, text):
 
 This code has just one change it will be making a group of four and then removing one from start and append new line at the end. In this way we call this group of four lines a screen and this screen stays for 4 secs as mentioned in the last line of the code.
 
-##Twitter:
+## Twitter:
 
 The half part was done for displaying but what to display? Twitter is useful and also well known for the short messages that are broadcast so we here will be using that API given by Twitter and ported to Python by the name Twython.
 
 To use it we just need a Twitter account and some application which you can easily get from [http://apps.twitter.com](https://apps.twitter.com/app/new).
 
-###Installing Twython on Raspi:
+### Installing Twython on Raspi:
 
-For installing we need to install the <code>python-setuptools</code> like <code>pip</code> to do so we just type in the following commands. So by using <code>pip</code> we install the whole API of Twitter which has been already ported to Python.
+For installing we need to install the `python-setuptools` like `pip` to do so we just type in the following commands. So by using `pip` we install the whole API of Twitter which has been already ported to Python.
 
 ```sh
 sudo apt-get update
@@ -135,14 +135,14 @@ sudo easy_install pip
 sudo pip install twython
 ```
 
-###Registering Twitter Application:
+### Registering Twitter Application:
 
 Go to <a href="https://apps.twitter.com/">http://apps.twitter.com</a> sign in or sign up for creating a new application. This will give following kind of screen which needs the name and its url if used. Fill up the full form and then it will ask for the authentication and rights. It simply means is this app been used for read purpose or also for writing i.e. just reading tweets or for tweeting too. It can be used if someone wants to share the output to some command and directly share on Twitter.
 <div id="container"><img src="/images/newapp_twitter.png" /></div>
 Now after creating the app you will see the authentication keys or access tokens. Keep them safe they are important and secret. Also we will need them for the Pi.
 <div id="container"><img src="/images/access_token.jpg" /></div>
 
-###Summing things up...
+### Summing things up...
 
 After installing twython and creating an app we need to add our code to Pi.
 
