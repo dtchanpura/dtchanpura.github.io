@@ -15,9 +15,9 @@ Well all started with 4 bit processors and now we have a compliance of 32- or 64
 
 Smaller the size and better the performance makes it quite useful. This shows that there's no place where electronic item is not used. But yeah the topic is about evolution and not a survey. So here's an image and a story there after about me.
 
-<a href="/images/evolve.jpg"><div id="container"><img src="/images/thumbs/evolve_thumb.jpg" /></div></a>
+<a href="/images/evolve.jpg"><img src="/images/thumbs/evolve_thumb.jpg" /></a>
 
-####Story:
+#### Story:
 
 I am a 21 year old student working on different programming platforms/languages like Assembly, C/C++, Python, etc. Now it may seem very unthinkable programming a graphics LCD using 8051 and that too in assembly (plus from scratch). So to minimize we have Embedded C which is very useful for some pretty tough tasks like this. So how the journey started. I was in my 5th grade and I started knowing what programming language BASIC but now i don't know how it looked like. The point here is knowing is just a start we need to go deep. So I talked to my dad he is a Professor and taught me the advanced electronics. Like you may think I was not knowing what/how transistor works but yeah I was having some idea about programming in a 8085.
 
