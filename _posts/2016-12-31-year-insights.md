@@ -17,7 +17,7 @@ At IQM Corp. I have been given roles for infrastructure and data science. I didn
 
 ## Docker<a name="docker"></a>
 
-Docker is something which gets mixed up with virtualization but it takes a lot of time to understand it is a Container and it is so different than Virtual Machine. More information can be found at [docker.io](https://docker.io). Management can really be tough but it has been simplified by [Kubernetes](https://http://k8s.info/)
+Docker is something which gets mixed up with virtualization but it takes a lot of time to understand it is a Container and it is so different than Virtual Machine. More information can be found at [docker.io](https://docker.io). Management can really be tough but it has been simplified by [Kubernetes](http://k8s.info/)
 
 Lot of things gets changed when you know how it works. So earlier according to me using docker was like a virtual machine and I used it the same way. But as it turns out its a simple Container containing an application. When you get to know how to use something you suddently become the master.
 
