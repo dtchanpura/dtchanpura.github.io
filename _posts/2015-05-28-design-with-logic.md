@@ -26,4 +26,4 @@ There is a term called User Experience which is needed in any development. Even 
 
 From this independent developers who dont have time and money to review their apps create a beta builds and share it through their friends and get a good feedbacks about them.
 
-If you want to get more idea about User Experience do visit [Aral Balkan's](https://aralbalkan.com/) profile.
+If you want to get more idea about User Experience do visit [Aral Balkan's](https://ar.al/) profile.
