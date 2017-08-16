@@ -1,9 +1,10 @@
 ---
 layout: post
 title: 'Image Processing: From the ‘Sixth Sense’ view.'
-categories: "Image Processing"
+categories: "cv"
 date: 2012-07-10 22:00:09
 status: published
+tags: ["computer vision", "image processing", "matlab"]
 description: "Image processing is just another phrase to make any computer or a device not just to see objects but also to understand what it represents."
 display: true
 ---

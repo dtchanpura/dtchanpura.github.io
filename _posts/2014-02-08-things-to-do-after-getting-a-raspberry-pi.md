@@ -7,17 +7,17 @@ status: published
 description: "Raspberry Pi is a small computer, but with lesser processing power so we cannot boot a Windows or Other Biggies. So which OSes are supported? We'll look into it in the following post."
 display: true
 ---
-So as the title says "What to do after getting a RasPi" the post will lead you to many ways of starting a RasPi <a title="i mean booting it up">(*)</a>.
+So as the title says "What to do after getting a RasPi" the post will lead you to many ways of starting a RasPi <a title="i mean booting it up">(^)</a>.
 
 Raspberry Pi is a small computer, but with lesser processing power so we cannot boot a Windows or Other Biggies (:-P directly). So which OSes are supported?
 
 There are most OSes which are working on a normal PC can be ported to Raspi, but with some predefined constraints in terms of speed and performance. But still the question remains unanswered .. Which OSes does Raspi support? The following Linux Distros which have been officially ported to Raspi's hardware profile namely.
 
-* <img src="/images/Raspbian_web.png" height=25 />Debian (Raspbian)
-* <img src="/images/Pidora_web.png" height=25 />Fedora (Pidora)
-* <img src="/images/Raspbmc_web.png" height=25 /><img src="/images/OpenELEC_web.png" height=25 />XBMC (RaspBMC, OpenELEC)
-* <img src="/images/arch_web.png" height=25 />Arch Linux
-* <img src="/images/RISC_OS_web.png" height=25 />RISC OS (Faster and Compact)
+* Debian (Raspbian)
+* Fedora (Pidora)
+* XBMC (RaspBMC, OpenELEC)
+* Arch Linux
+* RISC OS (Faster and Compact)
 * NOOBS (New Out Of the Box Software)
 
 So first task would be to select the OS. Now its depending on the function or application. You can define your application as if what is your purpose of the using Raspi. Now all have their pros and cons as discussed below. But before that let me brief you with the steps.

@@ -6,7 +6,7 @@ title: Home
 <div id="home">
   <h2>Blog Posts</h2>
   <div class="tabber">
-  <ul class="posts">{% for post in site.posts limit:10 %}{% if post.display == true %}<a class="fillbg" href="{{ post.url }}" >
+  <ul class="posts">{% for post in site.posts %}{% if post.display == true %}<a class="fillbg" href="{{ post.url }}" >
     <div class="fillbg">
       <li><b>{{ post.title }}:</b>
       <span>{{ post.description }}
@@ -14,5 +14,10 @@ title: Home
     </div></a>
     {% endif %}{% endfor %}
   </ul>
+  {% for post in site.posts %}
+  {% for tag in post.tags %}
+  <div>{{ tag }}</div>
+  {% endfor %}
+  {% endfor %}
   </div>
 </div>

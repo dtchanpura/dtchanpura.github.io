@@ -2,10 +2,10 @@
 layout: post
 title: 'Processors: Microcomputers and Microprocessors'
 description: "Recently I was studying microprocessors and I thought this would be a better start for my blog i have started this post with a poll to see that out of many processor manufacturer who is the better from them."
-tags: intel 8085 microprocessor
+tags: ['microprocessor', 'electronics']
 date: 2012-06-29 15:09:51
 status: published
-display: false
+display: true
 ---
 
 Recently I was studying microprocessors and I thought this would be a better start for my blog i have started this post with a poll to see that out of many processor manufacturer who is the better from them.
