@@ -1,14 +1,20 @@
 ---
 layout: post
-title: "Design with Logic"
-date: 2015-05-28 00:10:00
-categories: technology, programming
-status: beta
-description: "Design is an integral part of developing an application but also design should be secondary not a primary focus."
+title: Design with Logic
+date: 2015-05-28T00:10:00.000Z
+updated_on: 2017-08-19T19:49:24.000Z
+categories: technology
+tags:
+  - technology
+  - programming
+status: published
+description: >-
+  Design is an integral part of developing an application but also design should
+  be secondary not a primary focus.
 display: true
 ---
 
-### History
+# History
 
 Earlier in last decade I was thinking there is a lot of other things than just Electronics and Computers but now I see everywhere any thing you take has a direct or indirect relation with some electronic components.
 
@@ -18,7 +24,7 @@ This creates a problem for people who actually know everything about how things 
 
 This also has created a problem. Problem in form of user experience.
 
-### Current Scenario
+# Current Scenario
 
 A while ago I was designing a webpage for a media management and I forgot to add any text for hints or guide that how to use the site actually. This issue was also raised by my cousin who was facing difficulties using it. So now a days developers make apps that would be really great and helpful but not easy to use.
 
