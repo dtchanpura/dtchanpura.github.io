@@ -181,12 +181,18 @@ a.fillbg:hover {
 .meta {
   color: #222;
   border-radius: 5px;
-  ;
-  ;
   /*color: #cde;*/
   font-size: 100%;
   margin-left: 4em;
   float: right;
+}
+
+.tail-meta {
+  color: #222;
+  font-size: small;
+  /*position: relative;*/
+  /*float: right;*/
+  text-align: right;
 }
 
 .tags {
@@ -245,7 +251,7 @@ a.fillbg:hover {
   border: 0;
 }
 
-img {
+.post img {
   width: 100%;
 }
 

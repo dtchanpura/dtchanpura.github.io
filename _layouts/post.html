@@ -18,4 +18,10 @@ layout: default
 
 <div class="post">
   {{ content }}
+  {% if page.updated_on %}
+  <div class="tail-meta">
+    Last Updated on: {{ page.updated_on | date_to_string }}
+  </div>
+  {% endif %}
+
 </div>
