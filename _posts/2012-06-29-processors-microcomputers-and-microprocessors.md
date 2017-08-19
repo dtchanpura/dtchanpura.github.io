@@ -2,8 +2,11 @@
 layout: post
 title: 'Processors: Microcomputers and Microprocessors'
 description: "Recently I was studying microprocessors and I thought this would be a better start for my blog i have started this post with a poll to see that out of many processor manufacturer who is the better from them."
-tags: ['microprocessor', 'electronics']
+tags: 
+  - microprocessor
+  - electronics
 date: 2012-06-29 15:09:51
+updated_on: 2017-08-19T19:43:58.000Z
 status: published
 display: true
 ---
