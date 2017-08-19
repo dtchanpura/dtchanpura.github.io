@@ -2,6 +2,7 @@
 layout: post
 title: And that's how Telegram saved the day
 date: 2017-04-30T08:22:04.000Z
+updated_on: 2017-08-19T19:14:01.000Z
 categories: technology
 status: published
 description: This posts talks about how Telegram bots can be used for Notifications.
@@ -26,3 +27,5 @@ We found out our cloud hosting provider had sent us many mails about our account
 > Update (August 3, 2017): Recently Pavel Durov in his Telegram Channel also wrote something similar. It was not anything related to Notifications or stuff just comparing Email and Telegram. Following is the Text from the Channel quoted below
 
 > "In addition to meeting local coders and early adopters of Telegram, I had a lunch with Mr. Rudiantara, the Minister of Communication of Indonesia. Our previous attempts to connect with Mr. Rudi failed because of unreceived e-mails (**e-mail is unreliable – let us all switch to Telegram!**), but in the end it was all for the best since we managed to establish a great personal connection." (Ref: [Message](https://t.me/durov/54))
+
+More about Telegram [here](https://telegram.org)

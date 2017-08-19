@@ -2,6 +2,7 @@
 layout: post
 title: First Party tracking
 date: 2017-04-30T08:22:04.000Z
+updated_on: 2017-08-19T19:15:14.000Z
 categories: technology
 status: beta
 description: >-
@@ -76,6 +77,6 @@ I tried to use simple things here for getting the user access log through Nginx.
 
 This blog was hosted at Github and uses Github Pages to generate and build. Which is ok for a blog but I cannot get the log for these pages. So to track pages I started using a subdomain of the blog `px.dcpri.me` which has a sole purpose of tracking and loading Javascript.
 
-
-
 ## Code
+
+To be added.
