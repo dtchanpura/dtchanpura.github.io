@@ -301,12 +301,21 @@ blockquote p {
   overflow: auto;
 }
 
+.post pre span {
+  padding: 0px;
+}
+
+.post pre code {
+  padding: 2px;
+  display: block;
+}
+
 .post ul, .post ol {
   margin-left: .5em;
 }
 
 .post code {
-  border: 1px solid #444;
+  /*border: 1px solid #444;*/
   background-color: #eee;
   padding: 0px;
 }
