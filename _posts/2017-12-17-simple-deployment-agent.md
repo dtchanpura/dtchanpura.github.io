@@ -2,12 +2,12 @@
 layout: post
 title: Simple Deployment Agent
 date: 2017-12-17T17:18:00.000Z
-updated_on: 2017-12-17T18:38:55.000Z
+updated_on: 2017-12-17T18:41:02.000Z
 categories: technology
 status: published
 description: >-
   This post describes use of the project which is a simple deployment agent
-  (dep-agent). GitHub: [dtchanpura/deployment-agent](https://github.com/dtchanpura/deployment-agent)
+  (dep-agent). GitHub: dtchanpura/deployment-agent
 display: true
 tags:
   - devops
