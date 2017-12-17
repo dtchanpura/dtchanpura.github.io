@@ -2,6 +2,7 @@
 layout: post
 title: Simple Deployment Agent
 date: 2017-12-17T17:18:00.000Z
+updated_on: 2017-12-17T18:38:55.000Z
 categories: technology
 status: published
 description: >-
@@ -35,48 +36,63 @@ following are steps.
 
 ## Get the binary
 
-Download the latest archive, which is relevant to you, from the releases page of GitHub repository.
+* Download the latest archive, which is relevant to you, from the releases page of GitHub repository. [https://github.com/dtchanpura/deployment-agent/releases/latest](https://github.com/dtchanpura/deployment-agent/releases/latest)
 
-https://github.com/dtchanpura/deployment-agent/releases/latest
-
-Extract the archive
-
+* Extract the archive
 ```sh
 tar -xvf deployment-agent-*.tar.gz -C path/to/extract
 ```
 
-This archive contains a executable file `dep-agent` copy it to a location which
+* This archive contains a executable file `dep-agent` copy it to a location which
 is in the PATH variable. e.g. `/usr/local/bin` or `$HOME/bin`
-
 ```sh
 cp path/to/extract/dep-agent $HOME/bin
 ```
 
+* Command help/usage can be invoked by running `dep-agent --help`
+
 ## Initialize and add a new configuration ➕
 
-If you have copied executable file to some place contained by PATH variable you can use it directly by typing dep-agent in shell, else execute it by `/absolute/path/to/extract/dep-agent`
+* If you have copied executable file to some place contained by PATH variable you can use it directly by typing dep-agent in shell, else execute it by `/absolute/path/to/extract/dep-agent`
 
 ### Initialize
 
-To initialize just run following command, which creates a basic configuration
-file in $HOME/.dep-agent.yml
+* To initialize just run following command, which creates a configuration
+file
 
 ```sh
 dep-agent init
 ```
 
+* Initialized configuration file can be found at `$HOME/.dep-agent.yaml`
+
 ### Adding a configuration
 
 Configuration contains following things.
 
-|Field|Description|Switch|
-|---|---|---|
-|Name| Name of the project |--name|
-|Workdir| Working directory to execute hooks | --work-dir |
-|Pre-hook | Script Path to execute first  |-post-hook |
-|Post-hook |Script Path to execute last |--pre-hook |
-|Error-hook |Script Path to execute in event of error |--error-hook |
-|Whitelisted IP addresses (CIDR)| CIDR that is whitelisted for this configuration (can be more than one)| --ip-cidr
+* Name
+    * Description: Name of the project
+    * Option: `--name`
+
+* Workdir
+    * Description: Working directory to execute hooks
+    * Option: `--work-dir`
+
+* Pre-hook
+    * Description: Script Path to execute first
+    * Option: `--pre-hook`
+
+* Post-hook
+    * Description: Script Path to execute last
+    * Option: `--post-hook`
+
+* Error-hook
+    * Description: Script Path to execute in event of error
+    * Option: `--error-hook`
+
+* Whitelisted IP addresses (CIDR)
+    * Description: CIDR that is whitelisted for this configuration (can be more than one)
+    * Option: `--ip-cidr`
 
 Following is a sample command to run for adding a project configuration.
 
@@ -90,13 +106,14 @@ dep-agent add --name name \
 
 This will return two things which are necessary for the accessing the listener.
 
-* UUID which will be project's ID
-* Hash which is a secret hash to authenticate for executing scripts on webhook call.
-
 ```
 UUID for this project is: ece419ae-8ee2-44e3-a0d3-589eae79cd27
 Hash to be used for 192.168.0.0/16: Cgcf012PIoTAx9lG93N7qHg_Cg9qYM_g_TMjh690xGDS
 ```
+
+
+* UUID which will be project's ID
+* Hash which is a secret hash to authenticate for executing scripts on webhook call.
 
 ## Serving 🍽
 
@@ -109,6 +126,8 @@ Serve command comes with an option to detect change in project configurations by
 ```sh
 dep-agent serve --watch-config
 ```
+
+This should start a server listening.
 
 ### Systemd Service File (Recommended)
 
