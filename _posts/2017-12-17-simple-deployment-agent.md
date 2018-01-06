@@ -2,7 +2,7 @@
 layout: post
 title: Simple Deployment Agent
 date: 2017-12-17T17:18:00.000Z
-updated_on: 2017-12-17T18:41:02.000Z
+updated_on: 2018-01-06T16:12:30.000Z
 categories: technology
 status: published
 description: >-
@@ -128,6 +128,16 @@ dep-agent serve --watch-config
 ```
 
 This should start a server listening.
+
+## Access
+
+Once the server starts listening, there is a route `/reload` for running the hooks on remote server.
+
+Following is a sample cURL for the same.
+
+```sh
+curl -i https://localhost:8080/reload/ece419ae-8ee2-44e3-a0d3-589eae79cd27/Cgcf012PIoTAx9lG93N7qHg_Cg9qYM_g_TMjh690xGDS
+```
 
 ### Systemd Service File (Recommended)
 
