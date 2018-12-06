@@ -6,8 +6,8 @@
     <title>{{ page.title }} - {{site.name}} </title>
     <meta name="viewport" content="width=device-width">
     {% if page %}
-      <meta name="blog:title" content="{{page.title}}">
-      <meta name="blog:author" content="{{page.author | default: 'Darshil Chanpura' }}">
+      <meta name="blog:title" content="{{ page.title }}">
+      <meta name="blog:author" content="{{ page.author | default: 'Darshil Chanpura' }}">
       <meta name="blog:published_date" content="{{ page.date | default: 0 | date_to_xmlschema  }}">
     {% endif %}
     <link href='/feed.xml' rel='alternate' type='application/rss+xml'>
@@ -21,10 +21,16 @@
     <script type="text/javascript" src="//px.dcpri.me/px/px.js"></script>
     <!-- px snippet head end -->
   </head>
+
   <body>
     <div class="site">
       <div class="headbar">
-        <h1><span class="group"><div class="dark">DCPrime's</div><div class="light">Blog</div></span></h1>
+        <h1>
+          <span class="group">
+            <div class="dark">DCPrime's</div>
+            <div class="light">Blog</div>
+          </span>
+        </h1>
         <div class="navbar">
           <a href="/">Blog</a>
           <a class="extra" href="/about">About</a>
@@ -39,18 +45,18 @@
           <div class="flipper">
             <div class="front">
               <div class="contact">
-                <center width=200px>Darshil Chanpura<br />Developer:Designer<br />dcprime314@gmail.com</center>
+                <center>Darshil Chanpura</center>
               </div>
             </div>
             <div class="back">
               <div class="contact" id="icons">
                 <center width=200px>
-                <a href="mailto:dcprime314@gmail.com"><img src="/logo/gmail-512.png" width=48 alt="Mail to dtchanpura" /></a>
-                <a href="https://github.com/dtchanpura"><img src="/logo/github.png" width=48 alt="Github @dtchanpura" /></a>
-                <!--<a href="http://google.com/+DarshilChanpura"><img src="/logo/google.png" width=48 alt="Google +Darshil Chanpura" /></a><br />-->
-                <a href="https://twitter.com/dtchanpura"><img src="/logo/twitterICO.png" width=48 alt="Follow @dtchanpura" /></a>
-                <!--<a href="http://facebook.com/dtchanpura"><img src="/logo/facebook.png" width=48 alt="Facebook/dtchanpura" /></a>-->
-                <!--<a href="irc://irc.freenode.net/dcprime"><img src="/logo/irclogo.png" width=48 alt="IRC #dcprime"/></a>-->
+                  <a href="mailto:dcprime314@gmail.com"><img src="/logo/gmail-512.png" width=48 alt="Mail to dtchanpura" /></a>
+                  <a href="https://github.com/dtchanpura"><img src="/logo/github.png" width=48 alt="Github @dtchanpura" /></a>
+                  <!--<a href="http://google.com/+DarshilChanpura"><img src="/logo/google.png" width=48 alt="Google +Darshil Chanpura" /></a><br />-->
+                  <a href="https://twitter.com/dtchanpura"><img src="/logo/twitterICO.png" width=48 alt="Follow @dtchanpura" /></a>
+                  <!--<a href="http://facebook.com/dtchanpura"><img src="/logo/facebook.png" width=48 alt="Facebook/dtchanpura" /></a>-->
+                  <!--<a href="irc://irc.freenode.net/dcprime"><img src="/logo/irclogo.png" width=48 alt="IRC #dcprime"/></a>-->
                 </center>
               </div>
             </div>
@@ -58,9 +64,10 @@
         </div>
       </div>
     </div>
-        <!-- px snippet -->
+    <!-- px snippet -->
     <img id="px" src="data:image/png;base64,px" onerror="pxMain()">
     <div id="pxPopUp"></div>
     <!-- px snippet end -->
   </body>
+
 </html>
