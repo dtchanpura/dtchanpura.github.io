@@ -7,7 +7,7 @@ categories: technology
 status: published
 description: >-
   This post describes use of the project which is a simple deployment agent
-  (dep-agent). GitHub: dtchanpura/deployment-agent
+  (deployment-agent). GitHub: dtchanpura/deployment-agent
 display: true
 tags:
   - devops
@@ -43,17 +43,17 @@ following are steps.
 tar -xvf deployment-agent-*.tar.gz -C path/to/extract
 ```
 
-* This archive contains a executable file `dep-agent` copy it to a location which
+* This archive contains a executable file `deployment-agent` copy it to a location which
 is in the PATH variable. e.g. `/usr/local/bin` or `$HOME/bin`
 ```sh
-cp path/to/extract/dep-agent $HOME/bin
+cp path/to/extract/deployment-agent $HOME/bin
 ```
 
-* Command help/usage can be invoked by running `dep-agent --help`
+* Command help/usage can be invoked by running `deployment-agent --help`
 
 ## Initialize and add a new configuration ➕
 
-* If you have copied executable file to some place contained by PATH variable you can use it directly by typing dep-agent in shell, else execute it by `/absolute/path/to/extract/dep-agent`
+* If you have copied executable file to some place contained by PATH variable you can use it directly by typing deployment-agent in shell, else execute it by `/absolute/path/to/extract/deployment-agent`
 
 ### Initialize
 
@@ -61,10 +61,10 @@ cp path/to/extract/dep-agent $HOME/bin
 file
 
 ```sh
-dep-agent init
+deployment-agent init
 ```
 
-* Initialized configuration file can be found at `$HOME/.dep-agent.yaml`
+* Initialized configuration file can be found at `$HOME/.deployment-agent.yaml`
 
 ### Adding a configuration
 
@@ -74,7 +74,7 @@ Configuration contains following things.
     * Description: Name of the project
     * Option: `--name`
 
-* Workdir
+* Working Directory
     * Description: Working directory to execute hooks
     * Option: `--work-dir`
 
@@ -85,6 +85,11 @@ Configuration contains following things.
 * Post-hook
     * Description: Script Path to execute last
     * Option: `--post-hook`
+
+* Hook
+    * Description: Script Path to execute (irrespective of order). Also can be
+    multiple of them
+    * Option: `--hook`
 
 * Error-hook
     * Description: Script Path to execute in event of error
@@ -97,9 +102,9 @@ Configuration contains following things.
 Following is a sample command to run for adding a project configuration.
 
 ```sh
-dep-agent add --name name \
+deployment-agent add --name name \
     --work-dir work/dir/location \
-    --pre-hook /script/pre-hook.sh \
+    --hook /script/hook.sh \
     --ip-cidr 192.168.0.0/16 # To allow
     # 192.168.0.0 to 192.168.255.255 IPs
 ```
@@ -124,7 +129,7 @@ It can be configured by changing the host/port in configuration file.
 Serve command comes with an option to detect change in project configurations by appending `--watch-config`.
 
 ```sh
-dep-agent serve --watch-config
+deployment-agent serve --watch-config
 ```
 
 This should start a server listening.
@@ -151,7 +156,7 @@ After=network.target
 [Service]
 Type=simple
 WorkingDirectory=/home/$USERNAME
-ExecStart=/home/$USERNAME/bin/dep-agent serve --watch-config
+ExecStart=/home/$USERNAME/bin/deployment-agent serve --watch-config
 Restart=on-abort
 
 [Install]
@@ -162,8 +167,8 @@ Replace the text $USERNAME with your username and copy it to user folder of syst
 
 ```
 systemctl --user daemon-reload
-systemctl --user start dep-agent.service
-systemctl --user status dep-agent.service
+systemctl --user start deployment-agent.service
+systemctl --user status deployment-agent.service
 ```
 
 # Future work
