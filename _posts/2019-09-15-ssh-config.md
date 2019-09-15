@@ -1,6 +1,6 @@
 ---
 layout: post
-title: WireGuard® - Simple yet powerful VPN
+title: SSH Config
 date: 2019-09-15T11:18:00.000Z
 updated_on: 2019-09-15T11:18:00.000Z
 categories: technology
