@@ -4,11 +4,10 @@ title: I am in Love with Go :heart_eyes:
 date: 2020-05-05T00:00:00.000Z
 updated_on: 2020-05-05T00:00:00.000Z
 categories: technology
-status: published
+status: beta
 description: >-
   Go can be efficient in comparison with basic Bash commands.
 display: true
-beta: true
 tags:
   - devops
 ---
