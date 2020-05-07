@@ -1,6 +1,6 @@
 ---
 layout: post
-title: I am in Love with Go
+title: I am in Love with Go 😍
 date: 2020-05-05T00:00:00.000Z
 updated_on: 2020-05-05T00:00:00.000Z
 categories: technology
@@ -12,11 +12,13 @@ tags:
   - devops
 ---
 
-# I am in love with Go :heart_eyes:
+# Background
 
 Recently due to a bug in our configuration (and lack of monitoring) the number of uWSGI log files were increasing every few minutes. We realized that it was mainly because of max log file size. Instead of adding it in 1000000 we just put 10MB assuming it took MB as input as well but it did not take that and by default it went up and took, 1kilo-byte and the log which it had was just "triggering rotation to filename".
 
 This configuration was added a year ago and as expected we had about 3 Million files in one folder and with no cleaning mechanism added as such it would grow a lot and eventually fill up the disk space.
+
+# Solution
 
 Eventually we changed the configuration and restarted the service which started to work as expected, no more files and no more logs like "triggering rotation to filename". But still another problem remains. A lot of files in a folder, with some other logs as well. The file pattern was `/var/log/uwsgi/uwsgi.log.%s` where `%s` is the unix timestamp.
 
@@ -34,7 +36,7 @@ done
 find /var/log/uwsgi -type f -name 'uwsgi.log.15*' -exec rm \-f {} \;
 ```
 
-But both of them took a long time. Then I remembered there was something like a walk function in Go. My IDE helped a lot and I never even had to do a search on how to use it.
+But both of them took a long time. Then I remembered there was something like a walk function in Go (😍). My IDE helped a lot and I never even had to do a search on how to use it.
 
 Following piece of code helped me delete files that I wanted to.
 
