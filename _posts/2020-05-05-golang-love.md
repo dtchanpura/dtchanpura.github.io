@@ -1,6 +1,6 @@
 ---
 layout: post
-title: I am in Love with Go :heart_eyes:
+title: I am in Love with Go
 date: 2020-05-05T00:00:00.000Z
 updated_on: 2020-05-05T00:00:00.000Z
 categories: technology
