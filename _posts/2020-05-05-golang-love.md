@@ -2,7 +2,7 @@
 layout: post
 title: I am in Love with Go 😍
 date: 2020-05-05T00:00:00.000Z
-updated_on: 2020-05-05T00:00:00.000Z
+updated_on: 2020-05-09T17:58:29Z
 categories: technology
 status: beta
 description: >-
@@ -60,3 +60,4 @@ Finally I created the tool and built a binary for Linux and put it in the produc
 
 Also to note the server where I ran this code was a 6 core machine so the performance was supported by the hardware, even though the server was a CentOS 6 with Kernel 2.6.
 
+The final project is available [here](https://git.dcpri.me/some-fancy-tools/delete-tool).
