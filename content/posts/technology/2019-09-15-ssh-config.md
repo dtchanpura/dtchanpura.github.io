@@ -40,7 +40,7 @@ ssh -i ~/that-key-2.pem admin@10.1.x.x -p 1231
 
 This just makes life bit messy to just SSH into a server. Think about if there's something on fire or a production bug.
 
-\*drum roll\* 🥁
+\*drum roll\* :drum:
 
 Let's handle this with `ssh_config`. To get more details about `ssh_config` you can do `man ssh_config` but most handy and useful part should be covered in this post.
 

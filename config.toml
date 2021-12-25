@@ -1,6 +1,7 @@
 baseURL = "https://dcpri.me/"
 languageCode = "en-us"
 title = "DCPrime's Blog"
+enableEmoji = true
 
 [params]
   description = "Blog"
