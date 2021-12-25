@@ -4,7 +4,7 @@
     <div class="footer-links">
     {{ range .Site.Params.links -}}
         <a href="{{ .link }}" style="text-decoration: none;">
-        {{ if .logoEnabled }}<i class="fas {{ .logoClass }} fa-2x"></i>{{ end }}
+        {{ if .logoEnabled }}<i class="{{ .logoClass }} fa-2x"></i>{{ end }}
         {{ if .textEnabled }}{{ .text }}{{ end }}
         </a>
         {{ end -}}

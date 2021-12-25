@@ -10,7 +10,7 @@ theme = "etch"
   highlight = true
   mainSections = ["posts"]
   
-  stylesheets = ["/css/fontawesome.min.css", "/css/solid.min.css", "/css/custom.css"]
+  stylesheets = ["/css/fontawesome.min.css", "/css/brands.min.css", "/css/custom.css"]
 
   [params.plausible]
     enabled = true
@@ -20,15 +20,15 @@ theme = "etch"
   [[params.links]]
     link = "https://github.com/dtchanpura"
     logoEnabled = true
-    logoClass = "fa-github-square"
+    logoClass = "fab fa-github-square"
   [[params.links]]
     link = "https://twitter.com/dtchanpura"
     logoEnabled = true
-    logoClass = "fa-twitter-square"
+    logoClass = "fab fa-twitter-square"
   [[params.links]]
     link = "https://git.dcpri.me/explore"
     logoEnabled = true
-    logoClass = "fa-git-square"
+    logoClass = "fab fa-git-square"
 
 [menu]
   [[menu.main]]
