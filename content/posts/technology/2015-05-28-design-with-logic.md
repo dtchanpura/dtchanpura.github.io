@@ -2,7 +2,7 @@
 layout: post
 title: Design with Logic
 date: 2015-05-28T00:10:00.000Z
-updated_on: 2017-08-19T19:49:24.000Z
+lastmod: 2017-08-19T19:49:24.000Z
 categories: technology
 tags:
   - technology

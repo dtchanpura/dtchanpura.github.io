@@ -2,7 +2,7 @@
 layout: post
 title: Simple Deployment Agent
 date: 2017-12-17T17:18:00.000Z
-updated_on: 2018-01-06T16:12:30.000Z
+lastmod: 2018-01-06T16:12:30.000Z
 categories: technology
 status: published
 description: >-

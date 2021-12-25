@@ -1,0 +1,7 @@
+.footer-links {
+    font-size: x-large;
+}
+
+.footer-links a, .footer-links a:visited, .footer-links a:hover,.footer-links a:active {
+    color: inherit;
+}

@@ -2,7 +2,7 @@
 layout: post
 title: First Party tracking
 date: 2017-08-01T08:22:04.000Z
-updated_on: 2017-08-19T19:15:14.000Z
+lastmod: 2017-08-19T19:15:14.000Z
 categories: technology
 status: beta
 description: >-

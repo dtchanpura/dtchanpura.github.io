@@ -2,7 +2,7 @@
 layout: post
 title: I am in Love with Go 😍
 date: 2020-05-05T00:00:00.000Z
-updated_on: 2020-05-09T17:58:29Z
+lastmod: 2020-05-09T17:58:29Z
 categories: technology
 status: beta
 description: >-

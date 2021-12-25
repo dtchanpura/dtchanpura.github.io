@@ -6,7 +6,7 @@ tags:
   - microprocessor
   - electronics
 date: 2012-06-29 15:09:51
-updated_on: 2017-08-19T19:49:07.000Z
+lastmod: 2017-08-19T19:49:07.000Z
 status: published
 # draft: true
 aliases: [/2012/06/29/processors-microcomputers-and-microprocessors.html]

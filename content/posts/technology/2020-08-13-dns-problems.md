@@ -2,7 +2,7 @@
 layout: post
 title: DNS and Systemd - Resolved!
 date: 2020-08-13T09:29:10.000Z
-updated_on: 2020-08-13T09:49:51Z
+lastmod: 2020-08-13T09:49:51Z
 categories: technology
 status: beta
 description: >-

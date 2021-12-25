@@ -2,7 +2,7 @@
 layout: post
 title: And that's how Telegram saved the day
 date: 2017-04-30T08:22:04.000Z
-updated_on: 2017-08-19T19:14:01.000Z
+lastmod: 2017-08-19T19:14:01.000Z
 categories: technology
 status: published
 description: This posts talks about how Telegram bots can be used for Notifications.

@@ -2,7 +2,7 @@
 layout: post
 title: SSH Config
 date: 2019-09-15T11:18:00.000Z
-updated_on: 2019-09-15T11:18:00.000Z
+lastmod: 2019-09-15T11:18:00.000Z
 categories: technology
 status: published
 description: >-

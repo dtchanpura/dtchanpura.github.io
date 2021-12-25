@@ -9,6 +9,26 @@ enableEmoji = true
   dark = "auto"
   highlight = true
   mainSections = ["posts"]
+  
+  stylesheets = ["/css/fontawesome.min.css", "/css/solid.min.css", "/css/custom.css"]
+
+  [params.plausible]
+    enabled = true
+    domain = "dcpri.me"
+    src = "https://t.dcpri.me/js/plausible.js"
+
+  [[params.links]]
+    link = "https://github.com/dtchanpura"
+    logoEnabled = true
+    logoClass = "fa-github-square"
+  [[params.links]]
+    link = "https://twitter.com/dtchanpura"
+    logoEnabled = true
+    logoClass = "fa-twitter-square"
+  [[params.links]]
+    link = "https://git.dcpri.me/explore"
+    logoEnabled = true
+    logoClass = "fa-git-square"
 
 [menu]
   [[menu.main]]
@@ -25,12 +45,19 @@ enableEmoji = true
     url = "/about/"
     weight = 20
 
+  [[menu.main]]
+    identifier = "projects"
+    name = "Projects"
+    title = "Projects"
+    url = "/projects/"
+    weight = 30
+
 [permalinks]
   posts = "/:sections[1:]/:year/:month/:day/:title"
 
 [markup.goldmark.renderer]
-  # Allow HTML in Markdown
-  # unsafe = true
-
+  # Allows HTML in Markdown
+  unsafe = true
+  
   [markup.tableOfContents]
     ordered = true
