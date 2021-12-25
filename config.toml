@@ -1,0 +1,35 @@
+baseURL = "https://dcpri.me/"
+languageCode = "en-us"
+title = "DCPrime's Blog"
+
+[params]
+  description = "Blog"
+  copyright = "Copyright © 2021 Darshil Chanpura"
+  dark = "auto"
+  highlight = true
+  mainSections = ["posts"]
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    title = "Posts"
+    url = "/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    title = "About"
+    url = "/about/"
+    weight = 20
+
+[permalinks]
+  posts = "/:sections[1:]/:year/:month/:day/:title"
+
+[markup.goldmark.renderer]
+  # Allow HTML in Markdown
+  # unsafe = true
+
+  [markup.tableOfContents]
+    ordered = true
