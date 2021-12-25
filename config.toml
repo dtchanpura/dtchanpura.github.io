@@ -2,7 +2,7 @@ baseURL = "https://dcpri.me/"
 languageCode = "en-us"
 title = "DCPrime's Blog"
 enableEmoji = true
-
+theme = "etch"
 [params]
   description = "Blog"
   copyright = "Copyright © 2021 Darshil Chanpura"
