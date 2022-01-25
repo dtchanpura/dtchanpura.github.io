@@ -5,7 +5,7 @@ enableEmoji = true
 theme = "etch"
 [params]
   description = "Blog"
-  copyright = "Copyright © 2021 Darshil Chanpura"
+  copyright = "Copyright © 2022 Darshil Chanpura"
   dark = "auto"
   highlight = true
   mainSections = ["posts"]
