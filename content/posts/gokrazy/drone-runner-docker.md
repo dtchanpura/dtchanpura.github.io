@@ -9,7 +9,7 @@ This post is not a complete guide to run drone-runner-docker with all code setup
 
 # Purpose
 
-Drone is a CI Tool and to build or run the tasks mentioned in .drone.yml we need runners. There are different types of runners, docker, kubernetes, exec (script), etc.
+[Drone](https://www.drone.io/) is a CI Tool and to build or run the tasks mentioned in `.drone.yml` we need runners. There are different types of runners, docker, kubernetes, exec (script), etc.
 
 These workers are needed to be running on any instances where the main server is accessible.
 
@@ -29,15 +29,18 @@ In an ideal scenario, following command should start up the runner.
   drone/drone-runner-docker:1
 ```
 
-## Problem 1: Daemon needs a sock.
+> Reference: https://docs.drone.io/runner/docker/installation/linux/
 
-Docker runs as a daemon, and we need the /var/run/docker.sock for it to run. The reason being, internally the drone-runner-docker binary will run docker containers based on the configuration from inside the main container.
+## Problem 1: Docker has a sock :socks:.
+
+Docker runs as a daemon, and we need the `/var/run/docker.sock` for it to run. The reason being, internally the drone-runner-docker binary will run docker containers based on the configuration from inside the main container.
 
 For podman that's not the case, to fix it we need to run the podman as service, as follows.
 
 ```
 # mkdir /perm/podman
-# podman system service --time 0 unix://perm/podman/podman.sock
+# podman system service --time 0 \
+    unix://perm/podman/podman.sock
 ```
 
 The above command will run the podman as service or daemon on /perm/podman/podman.sock.
@@ -81,7 +84,9 @@ To solve it we can override that using `--cni-config-dir`, so we can copy the fi
 # mkdir /perm/podman/net.d/
 # cp -aR /etc/cni/net.d/* /perm/podman/net.d/
 # rm /perm/podman/podman.sock
-# podman --cni-config-dir /perm/podman/net.d system service --time 0 unix://perm/podman/podman.sock
+# podman --cni-config-dir /perm/podman/net.d \
+    system service --time 0 \
+    unix://perm/podman/podman.sock
 ```
 
 Running Container
@@ -142,6 +147,6 @@ time="2022-04-29T18:21:13Z" level=info msg="successfully pinged the remote serve
 time="2022-04-29T18:21:13Z" level=info msg="polling the remote server" arch=arm64 capacity=2 endpoint="https://drone.company.com" kind=pipeline os=linux type=docker
 ```
 
-Aaaand I was able to see one of the build passing! That's enough for me :happy:
+Aaaand I was able to see one of the build passing! That's enough for me :smile:
 
-![drone-ci screenshot](/static/images/gokrazy-drone-runner-docker.png)
+![drone-ci screenshot building grafana](/images/gokrazy-drone-runner-docker.png)
