@@ -12,6 +12,7 @@ The project gokrazy contains tools and commands for installing the applications 
 
 # Applications
 
-* [Grafana](/gokrazy/2022/01/23/grafana-gokrazy/) - in progress
-* [Mattermost](/gokrazy/2022/01/23/mattermost-gokrazy/) - in progress
-* [Restic Rest Server](/gokrazy/2022/01/23/restic-rest-server-gokrazy/) - in progress
+* [drone-runner-docker](/gokrazy/2022/04/29/drone-runner-docker/) - complete but not perfect.
+* [rest-server](/gokrazy/2022/01/23/restic-rest-server-gokrazy/) - in progress
+* [grafana](/gokrazy/2022/01/23/grafana-gokrazy/) - in progress
+* [mattermost-server](/gokrazy/2022/01/23/mattermost-gokrazy/) - in progress
