@@ -2,7 +2,7 @@ baseURL = "https://dcpri.me/"
 languageCode = "en-us"
 title = "DCPrime's Blog"
 enableEmoji = true
-theme = "etch"
+theme = "PaperMod"
 [params]
   description = "Blog"
   copyright = "Copyright © 2022 Darshil Chanpura"
@@ -29,6 +29,18 @@ theme = "etch"
     link = "https://git.dcpri.me/explore"
     logoEnabled = true
     logoClass = "fab fa-git-square"
+  [params.homeInfoParams]
+    Title = "DCPrime's Blog"
+    Content = "Hello everyone! I am Darshil Chanpura, working as a DevOps engineer at IQM Corporation and a geek who is into many things related to many different platforms.\n<br><br>\nYou'll find a lot of learnings over the years here."
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/dtchanpura"
+  [[params.socialIcons]]
+    name = "twitter"
+    url = "https://twitter.com/dtchanpura"
+  [[params.socialIcons]]
+    name = "mastodon"
+    url = "https://mastodon.online/@dtchanpura"
 
 [menu]
   [[menu.main]]
@@ -61,3 +73,4 @@ theme = "etch"
   
   [markup.tableOfContents]
     ordered = true
+
