@@ -41,7 +41,9 @@ theme = "PaperMod"
   [[params.socialIcons]]
     name = "mastodon"
     url = "https://mastodon.online/@dtchanpura"
-
+  [[params.socialIcons]]
+    name = "git"
+    url = "https://git.dcpri.me/"
 [menu]
   [[menu.main]]
     identifier = "posts"

@@ -1,7 +1,7 @@
 ---
 title: "Mattermost - gokrazy"
 date: 2022-01-23T12:30:20+05:30
-draft: true
+draft: false
 description: This post is about how to install Mattermost Server on Raspberry Pi running gokrazy
 ---
 
