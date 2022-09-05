@@ -12,6 +12,8 @@ information about it is available on [restic.net](https://restic.net).
 Restic provides backends or repository options where the backups can be stored,
 one of that is [Rest Server](https://github.com/restic/rest-server).
 
+The wrapper for rest-server is available at [that-awesome-organization/gokrazy-restic-rest-server](https://github.com/that-awesome-organization/gokrazy-restic-rest-server).
+
 # Disk Setup
 
 Before running the `rest-server` we need to setup the disk so that it can be used directly.
@@ -189,44 +191,4 @@ And then it worked.
 
 Note: The binary that is included in the distribution is static build of blkid from [util-linux](https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git) with config options as `--disable-all-programs --enable-blkid --enable-libblkid --enable-static-programs=blkid`.
 
-I will add that to GitHub as and when time permits.
-
-This is the Dockerfile:
-
-```Dockerfile
-FROM debian:latest
-
-WORKDIR /build
-
-RUN apt-get update -y && apt-get install -y wget build-essential bison automake pkg-config libtool gettext autopoint
-
-COPY build.sh .
-
-ENTRYPOINT ["/build/build.sh"]
-```
-
-and here is the build.sh
-
-```bash
-VERSION=$1
-wget --progress=dot:mega https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/snapshot/util-linux-${VERSION}.tar.gz
-
-tar -xf util-linux-${VERSION}.tar.gz
-
-cd /build/util-linux-${VERSION}
-
-./autogen.sh && ./configure --disable-all-programs --enable-blkid --enable-libblkid --enable-static-programs=blkid
-
-make
-
-mkdir -p /shared
-cp blkid.static /shared
-```
-
-Build command was 
-
-```bash
-podman build -t util-linux:base -f Dockerfile   # Build Image
-podman run -ti --rm util-linux:base 2.38.1      # Run the build for util-linux
-```
-
+The util-linux package is available at [that-awesome-organization/gokrazy-util-linux](https://github.com/that-awesome-organization/gokrazy-util-linux).
